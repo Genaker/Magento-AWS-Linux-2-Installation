@@ -1,5 +1,6 @@
 #!/bin/bash
-PHP_VERSION=7.4
+PHP_VERSION="7.4"
+ELKREPO="7.x"
 
 sudo amazon-linux-extras install php${PHP_VERSION}
 
@@ -39,6 +40,20 @@ composer -v
 
 sudo yum install -y mariadb-server
 sudo service mariadb start
+
+#install Elastic Search
+
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+cat > /etc/yum.repos.d/elastic.repo << EOF
+[elasticsearch-${ELKREPO}]
+name=Elasticsearch repository for ${ELKREPO} packages
+baseurl=https://artifacts.elastic.co/packages/${ELKREPO}/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+EOF
 
 
 
