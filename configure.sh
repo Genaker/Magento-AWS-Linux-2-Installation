@@ -10,6 +10,13 @@ server {
   set \$MAGE_ROOT /var/www/html/magento;
   include /var/www/html/magento/nginx.conf.sample;
 }
+
+# PHP-FPM FastCGI server
+# network or unix domain socket configuration
+
+upstream php-fpm {
+        server unix:/run/php-fpm/www.sock;
+}
 EOF
 
 cat > /etc/php.d/10-opcache.ini <<END
