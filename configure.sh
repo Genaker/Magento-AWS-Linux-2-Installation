@@ -9,7 +9,7 @@ server {
   server_name _;
   set \$MAGE_ROOT /var/www/html/magento;
   include /var/www/html/magento/nginx.conf.sample;
-}"
+}
 EOF
 
 cat > /etc/php.d/10-opcache.ini <<END
