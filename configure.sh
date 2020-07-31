@@ -7,7 +7,7 @@ cat > /etc/nginx/conf.d/magento.conf<<EOF
 server {
   listen 80;
   server_name _;
-  set $MAGE_ROOT /var/www/html/magento;
+  set \$MAGE_ROOT /var/www/html/magento;
   include /var/www/html/magento/nginx.conf.sample;
 }"
 EOF
