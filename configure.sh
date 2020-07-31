@@ -3,7 +3,7 @@
 #remove default
 sed 's/80/6666/g'  /etc/nginx/nginx.conf
 
-cat > conf.d/magento.conf<<EOF
+cat > /etc/nginx/conf.d/magento.conf<<EOF
 server {
   listen 80;
   server_name _;
