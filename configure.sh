@@ -14,7 +14,7 @@ server {
 # PHP-FPM FastCGI server
 # network or unix domain socket configuration
 
-upstream php-fpm {
+upstream fastcgi_backend {
         server unix:/run/php-fpm/www.sock;
 }
 EOF
