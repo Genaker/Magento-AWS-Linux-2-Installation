@@ -36,10 +36,21 @@ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 composer -v
 
-#install MAriaDB
+#install MAriaDB 10.4
 
-sudo yum install -y mariadb-server
+sudo tee /etc/yum.repos.d/MariaDB.repo<<EOF 
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.4/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+EOF
+
+sudo yum -y install MariaDB-server MariaDB-client
+
 sudo service mariadb start
+
+mysql -e 'Select Version()';
 
 #install Elastic Search
 
