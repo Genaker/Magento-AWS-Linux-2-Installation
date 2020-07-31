@@ -65,3 +65,7 @@ sed -i 's/;pm.max_requests = 500/pm.max_requests = 10000/' /etc/php-fpm.d/www.co
 sed -i 's/pm.max_children = 50/pm.max_children = 1000/' /etc/php-fpm.d/www.conf
 
 echo "/etc/php.ini loaded [ok]"
+
+sudo service nginx restart
+sudo service php-fpm restart
+
