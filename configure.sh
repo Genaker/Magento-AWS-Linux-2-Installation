@@ -75,4 +75,6 @@ echo "/etc/php.ini loaded [ok]"
 
 sudo service nginx restart
 sudo service php-fpm restart
+sudo service elasticsearch restart
+sudo service redis restart
 
