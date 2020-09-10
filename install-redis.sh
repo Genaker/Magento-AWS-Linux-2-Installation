@@ -12,6 +12,8 @@ sudo yum-config-manager --enable remi
 
 sudo yum install redis -y
 
+redis-server -v
+
 sudo service redis start
 
 sudo chkconfig redis on
