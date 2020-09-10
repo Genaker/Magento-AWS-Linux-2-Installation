@@ -4,7 +4,7 @@ MAGENTO_VERSION="2.3.4"
 
 echo "Download Magento using Composer"
 
-sudo mkdir /var/www/html/magento
+sudo mkdir -p /var/www/html/magento
 
 sudo chmod 777 /var/www/html/magento/
 
