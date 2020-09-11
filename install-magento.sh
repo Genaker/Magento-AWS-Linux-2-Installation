@@ -33,6 +33,8 @@ fi
 
 yes | /var/www/html/magento/bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=127.0.0.1 --cache-backend-redis-db=0
 
+echo "http://$MAGE_DOMAIN"
+
 #bin/magento sampledata:deploy
 #bin/magento setup:upgrade
 #bin/magento setup:di:compile
