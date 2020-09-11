@@ -2,6 +2,8 @@
 
 MAGENTO_VERSION="2.3.4"
 
+export COMPOSER_MEMORY_LIMIT=-1
+
 echo "Download Magento using Composer"
 
 sudo mkdir -p /var/www/html/magento
