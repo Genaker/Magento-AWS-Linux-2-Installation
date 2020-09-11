@@ -31,7 +31,7 @@ fi
 --timezone=America/Chicago \
 --use-rewrites=1 $ELASTIC_INSTALL
 
-bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=127.0.0.1 --cache-backend-redis-db=0
+/var/www/html/magento/bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=127.0.0.1 --cache-backend-redis-db=0
 
 #bin/magento sampledata:deploy
 #bin/magento setup:upgrade
