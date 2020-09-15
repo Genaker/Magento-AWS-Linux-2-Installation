@@ -1,9 +1,10 @@
 #!/bin/bash
 PHP_VERSION="7.4"
 
-sudo amazon-linux-extras disable php7.4
+sudo amazon-linux-extras enable php7.4
 
-#sudo amazon-linux-extras disable php7.4
+# to downgarede use disable command
+#sudo amazon-linux-extras disable php7.4 
 
 sudo amazon-linux-extras install php${PHP_VERSION}
 
