@@ -1,6 +1,6 @@
 #!/bin/bash
 
-EFS_NAME="fs-52168e57"
+EFS_NAME="fs-52168e57?"
 
 cd /var/www/html/magento/
 
