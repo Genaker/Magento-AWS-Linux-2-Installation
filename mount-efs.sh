@@ -10,6 +10,8 @@ mkdir pub/media-tmp
 
 cp -r pub/media/* pub/media-tmp/
 
+rm -f pub/media/*
+
 sudo mount -t efs -o tls $EFS_NAME:/ pub/media
 
 cp -r pub/media-tmp/* pub/media/  && rm -rf pub/media-tmp/  # beter make async will rur for a while
