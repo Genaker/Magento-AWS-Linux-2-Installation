@@ -29,4 +29,10 @@ composer install # use instal if you are having Lock file or Update if without
 
 rm -rf ./app/env.php
 
+# copy production images to S3
+# aws s3 cp /{magento_dir}/pub/media/ s3://{your-s3media-bucked}/ --recursive --exclude "*cache*"
+
+# copy from s 3 to current server 
+# aws s3 cp s3://{your-s3media-bucked}/ /{magento_dir}/pub/media/  --recursive --exclude "*cache*"
+
 bash ./install-magento.sh
