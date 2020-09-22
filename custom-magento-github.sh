@@ -21,11 +21,21 @@ composer install # use instal if you are having Lock file or Update if without
 
 # rm /production_dump.sql.gz 
 
-#change magento configurations
+# change magento configurations
+
+# for HTTPS
 
 # mysql -u root magento2 -e 'UPDATE core_config_data set value = "0" where path like "%web/secure/use_in%"'
+
 # mysql -u root magento2 -e "UPDATE core_config_data set value = \"http://$MAGE_DOMAIN/\" where path like \"%base_url%\""
 # mysql -u root magento2 -e "UPDATE core_config_data set value = \"http://$MAGE_DOMAIN/\" where path like \"%web/unsecure/base_link_url%\""
+
+# for Https 
+# mysql -u root magento2 -e 'UPDATE core_config_data set value = "1" where path like "%web/secure/use_in%"'
+
+# mysql -u root magento2 -e "UPDATE core_config_data set value = \"https://$MAGE_DOMAIN/\" where path like \"%base_url%\""
+# mysql -u root magento2 -e "UPDATE core_config_data set value = \"https://$MAGE_DOMAIN/\" where path like \"%web/unsecure/base_link_url%\""
+
 
 rm -rf ./app/env.php
 
