@@ -8,6 +8,7 @@ cd /var/www/html/magento/
 git clone $YOUR_GIT_REPOSETORY . #replace with your git hub url
 
 git config core.fileMode false
+git config --global credential.helper store
 
 composer install # use instal if you are having Lock file or Update if without 
 
