@@ -47,4 +47,7 @@ sudo yum install yarn -y
 
 npm install
 
+cp config.sample.inc.php config.inc.php
+
+## if Login without a password is forbidden by configuration (see AllowNoPassword)
 ## $cfg['Servers'][$i]['AllowNoPassword'] = true; in config.sample.inc.php to use without password
