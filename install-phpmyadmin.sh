@@ -1,5 +1,4 @@
- 
-#!/bin/bash
+ #!/bin/bash
 
 cd /var/www/html/
 
@@ -48,4 +47,4 @@ sudo yum install yarn -y
 
 npm install
 
-
+## $cfg['Servers'][$i]['AllowNoPassword'] = true; in config.sample.inc.php to use without password
