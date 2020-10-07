@@ -25,6 +25,7 @@ sudo cp ./redis-stable/redis.conf /etc/redis
 #sudo -u ec2-user /usr/local/bin/redis-server --daemonize yes
 
 # Run as SUDO
+# Detailed instruction: https://www.digitalocean.com/community/tutorials/how-to-install-redis-from-source-on-ubuntu-18-04
 
 cat > /etc/systemd/system/redis.service <<END
 [Unit]
