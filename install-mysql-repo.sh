@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#Works only with x86 instance
  
 MARIADB="10.2" 
 
