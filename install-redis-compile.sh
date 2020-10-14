@@ -27,6 +27,8 @@ sudo groupadd redis
 sudo adduser --system -g redis --no-create-home redis
 mkdir -p /var/lib/redis
 
+sudo su - $USER
+
 #sudo chmod -R 777 /usr/local/bin/redis-server /etc/redis/redis.conf
 
 #sudo -u ec2-user /usr/local/bin/redis-server --daemonize yes
