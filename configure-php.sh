@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Supports AWS Linux and Centos 8
+
 cat > /etc/php.d/10-opcache.ini <<END
 zend_extension=opcache.so
 opcache.enable = 1
