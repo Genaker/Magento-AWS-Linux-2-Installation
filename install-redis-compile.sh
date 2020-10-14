@@ -50,6 +50,8 @@ Restart=always
 WantedBy=multi-user.target
 END
 
+cd ..
+
 sudo systemctl enable redis
 sudo systemctl start redis
 
