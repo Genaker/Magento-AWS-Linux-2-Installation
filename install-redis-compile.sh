@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Tested Centos 8, AWS? ARM?
+
 echo "Install Redis"
 
 yum install make -y 
