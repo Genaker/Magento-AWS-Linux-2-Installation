@@ -19,13 +19,13 @@ elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   OSRELEASE="8"
   cat > /etc/yum.repos.d/nginx.repo <<END
-  [nginx-mainline]
-  name=nginx mainline repo
-  baseurl=http://nginx.org/packages/mainline/centos/\$releasever/\$basearch/
-  gpgcheck=0
-  enabled=1
-  module_hotfixes=true
-  END
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/\$releasever/\$basearch/
+gpgcheck=0
+enabled=1
+module_hotfixes=true
+END
   sudo yum -y install nginx
 else
   echo "$LINUX_VERSION Linux is not supported"
