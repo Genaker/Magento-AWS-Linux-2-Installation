@@ -57,4 +57,4 @@ cd ..
 sudo systemctl enable redis
 sudo systemctl start redis
 
-sudo service redis status
+sudo service redis status --no-pager
