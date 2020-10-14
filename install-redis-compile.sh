@@ -29,6 +29,7 @@ sudo groupadd redis
 sudo adduser --system -g redis --no-create-home redis
 mkdir -p /var/lib/redis
 
+# Use gpasswd for immediate change
 sudo gpasswd -a redis redis
 
 #ToDo: Improve permissions
