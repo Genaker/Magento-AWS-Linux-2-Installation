@@ -12,11 +12,13 @@ echo $LINUX_VERSION
 
 if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
+  echo "Install Uing Amazon Linux Extras"
   OSRELEASE="7"
   sudo amazon-linux-extras install nginx1 -y
   sudo systemctl enable nginx
 elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
+  echo "Install Uing Centos 8"
   OSRELEASE="8"
   cat > /etc/yum.repos.d/nginx.repo <<END
 [nginx-mainline]
