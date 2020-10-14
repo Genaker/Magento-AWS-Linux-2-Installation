@@ -12,7 +12,7 @@ then
   # to downgarede use disable command
   #sudo amazon-linux-extras disable php7.4 
   sudo amazon-linux-extras install php${PHP_VERSION} 
-  OS_RELATED = "php-redis php-pear libmcrypt libmcrypt-devel php-mcrypt"
+  OS_RELATED = " php-redis php-pear libmcrypt libmcrypt-devel php-mcrypt "
 elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
