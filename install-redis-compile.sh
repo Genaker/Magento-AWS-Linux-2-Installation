@@ -2,6 +2,7 @@
 
 echo "Install Redis"
 
+yum install make -y 
 sudo yum install gcc -y
 
 wget http://download.redis.io/redis-stable.tar.gz 
@@ -21,6 +22,12 @@ cd ..
 pwd
 
 sudo cp ./redis-stable/redis.conf /etc/redis
+
+sudo groupadd redis
+sudo adduser --system -g redis --no-create-home redis
+mkdir -p /var/lib/redis
+
+#sudo chmod -R 777 /usr/local/bin/redis-server /etc/redis/redis.conf
 
 #sudo -u ec2-user /usr/local/bin/redis-server --daemonize yes
 
