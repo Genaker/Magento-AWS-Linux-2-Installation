@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Works with CEntos 8 and AWS LINUX
+# Works with Centos 8 and AWS LINUX 2
 
 # Official documentation how to install 
 # https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/#installing-a-prebuilt-centos-rhel-package-from-the-official-nginx-repository
