@@ -40,8 +40,8 @@ Description=Redis Data Store
 After=network.target
 
 [Service]
-User=ec2-user
-Group=ec2-user
+User=redis
+Group=redis
 ExecStart=/usr/local/bin/redis-server /etc/redis/redis.conf
 ExecStop=/usr/local/bin/redis-cli shutdown
 Restart=always
@@ -52,7 +52,5 @@ END
 
 sudo systemctl enable redis
 sudo systemctl start redis
-
-sudo systemctl status redis
 
 sudo service redis status
