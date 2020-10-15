@@ -37,10 +37,12 @@ sudo gpasswd -a "${USER}" docker
 
 sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=root -d mariadb:latest
 
+# mysql-cli
+
 sudo yum install mysql -y 
 
 # sudo docker exec -it magento bash
- 
+  
 # sudo yum install mariadb-bench
 
 # sudo docker exec -it magento bash
