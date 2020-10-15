@@ -3,7 +3,26 @@
 # Using this for ARM Graviton processor 
 # it is difficult to run it on AEM a 
 
-sudo yum install docker
+LINUX_VERSION=$(cat /etc/system-release)
+
+echo $LINUX_VERSION
+
+if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
+then
+  echo "Install Uing Amazon Linux Extras"
+  OSRELEASE="7"
+elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
+then
+  echo "Install Uing Centos 8"
+  OSRELEASE="8"
+  sudo curl -fsSL https://get.docker.com/ | sh
+  sudo yum install docker-ce
+else
+  echo "$LINUX_VERSION Linux is not supported"
+  sudo yum install docker
+  exit 1
+fi
+
 
 sudo service docker start
 
@@ -19,7 +38,7 @@ sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=root -d mari
 
 # sudo docker exec -it magento bash
  
-sudo yum install mariadb-bench
+# sudo yum install mariadb-bench
 
 # sudo docker exec -it magento bash
 
