@@ -25,6 +25,8 @@ fi
 
 sudo service docker start
 
+sudo systemctl enable docker
+
 docker pull mariadb
 
 docker images
