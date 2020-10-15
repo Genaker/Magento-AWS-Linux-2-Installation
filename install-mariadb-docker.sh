@@ -11,6 +11,7 @@ if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
   echo "Install Uing Amazon Linux Extras"
   OSRELEASE="7"
+  sudo yum install docker
 elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   echo "Install Uing Centos 8"
@@ -19,10 +20,8 @@ then
   sudo yum install docker-ce
 else
   echo "$LINUX_VERSION Linux is not supported"
-  sudo yum install docker
   exit 1
 fi
-
 
 sudo service docker start
 
@@ -35,6 +34,8 @@ sudo gpasswd -a "${USER}" docker
 # ToDo: volume my.conf and db files
 
 sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=root -d mariadb:latest
+
+sudo yum install mysql -y 
 
 # sudo docker exec -it magento bash
  
