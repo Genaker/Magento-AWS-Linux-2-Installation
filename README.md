@@ -40,3 +40,10 @@ start recipe has all component in the right order.
 
 An image recipe is a main documant that defines the source image and the components to be applied to the instance to produce the desired configuration .
 
+# How to RUN: 
+
+## Run main Recipie
+```
+sudo biash install-all.sh
+```
+You probably need some customisation. Also you can create your own configuration. Forexample You wanna use AWS services RDS, ElasticCaheRedis you can remove that components. If you have any issues create the ticket and I help you. 
