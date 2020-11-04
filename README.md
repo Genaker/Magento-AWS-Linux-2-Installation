@@ -1,5 +1,6 @@
 # Magento Commerce Cloud to AWS Linux 2 Instalation migration tool 
-this open Source project simplifies the creation, maintenance, validation, sharing, and deployment of the Magento 2 and LEMP stack instalation.
+Every Merchants whant to have faster web site and pay less for the hosting. Magento Cloud works only for smal project without trafic. If you are having 2+ request per second you will safer with magento cloud, becouse it was designet not for Magento. It is Platform.SH hosting for Drupal. And realy it is not real cloud it just uses Amazon Web Services to buy instances. The best way to improve performnce and price it is to buy services dirrectly from AWS without any gasket.   
+This open Source project simplifies the creation, maintenance, validation, sharing, and deployment of the Magento 2 and LEMP stack instalation.
 LEMP (Linux, NGINX, MySQL (MariaDb), PHP) is a very common example of a web service stack, named as an acronym of the names of its original four open-source components: the Linux operating system, the NGINX HTTP Server, the MySQL relational database management system (RDBMS), and the PHP programming language. The LEMP components are largely interchangeable and not limited to the original selection. As a solution stack, LEMP is suitable for building dynamic web sites and web applications.
 
 Since its creation, the LEMP model has been adapted to other componentry, though typically consisting of free and open-source software. 
