@@ -10,6 +10,9 @@ server {
   listen 80;
   server_name _;
   set \$MAGE_ROOT /var/www/html/magento;
+  
+  ##ADDITIONAL_CONFIG
+  
   include /var/www/html/magento/nginx.conf.sample;
 }
 
