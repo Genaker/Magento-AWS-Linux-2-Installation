@@ -16,6 +16,8 @@ composer install # use instal if you are having Lock file or Update if without
 
 # mysql -u root -e  'create database magento2;'
 
+# sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' -i ../production_dump.sql
+
 # mysql -u root magento2 < ./production_dump.sql.gz
 
 # zcat ./production_dump.sql.gz | mysql -u root magento2 
