@@ -16,6 +16,20 @@ then
   #sudo amazon-linux-extras disable php7.4 
   sudo amazon-linux-extras install php${PHP_VERSION} 
   OS_RELATED = " php-redis php-pear libmcrypt libmcrypt-devel php-mcrypt "
+  
+  ## REmi repo 
+  
+  # sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+  # sudo yum --disablerepo="*" --enablerepo="remi-safe" list php[7-9][0-9].x86_64
+  # sudo yum-config-manager --setopt="remi-php73.priority=5" --enable remi-php73
+  # sudo yum install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel
+  # wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.g
+  # tar -zxvf ioncube_loaders_lin_x86*
+  # sudo cp ioncube/ioncube_loader_lin_7.3.so /usr/lib64/php/
+  # Then add below line as the first line in the respective php.ini files.
+  # zend_extension = /usr/lib64/php/ioncube_loader_lin_7.3.so
+  # sudo yum install nginx -y
+
 elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
@@ -29,7 +43,7 @@ else
   exit 1
 fi
 
-sudo yum install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel $OS_RELATED -y
+  sudo yum install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel $OS_RELATED -y
 
 echo "PHP $PHP_VERSION is installed "
  
