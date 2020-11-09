@@ -23,7 +23,7 @@ then
   # sudo yum --disablerepo="*" --enablerepo="remi-safe" list php[7-9][0-9].x86_64
   # sudo yum-config-manager --setopt="remi-php73.priority=5" --enable remi-php73
   # sudo yum install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel
-  # wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.g
+  # wget https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
   # tar -zxvf ioncube_loaders_lin_x86*
   # sudo cp ioncube/ioncube_loader_lin_7.3.so /usr/lib64/php/
   # Then add below line as the first line in the respective php.ini files.
