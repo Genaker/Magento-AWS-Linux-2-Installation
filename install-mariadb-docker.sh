@@ -13,7 +13,7 @@ then
   OSRELEASE="7"
   sudo yum install docker
   sudo usermod -aG docker ${USER}
-  //sudo chmod 666 /var/run/docker.sock
+  sudo chmod 666 /var/run/docker.sock
 elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   echo "Install Uing Centos 8"
