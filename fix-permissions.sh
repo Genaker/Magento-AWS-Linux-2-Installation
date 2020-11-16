@@ -20,3 +20,17 @@ sudo usermod -a -G ec2-user nginx
 sudo usermod -a -G ec2-user ec2-user
 sudo chmod -R g+w var/
 sudo chmod -R g+w pub/media/
+
+#or
+
+#echo "\nUpdate permissions..."
+#[OWNER][:[GROUP]]
+#sudo chown -R ec2-user:ec2-user $project_dir
+#sudo chmod -R 755 .
+#sudo chmod -R 2750 .
+#sudo chmod g-wx,o-wx $project_dir/generated
+#sudo chown -h ec2-user:ec2-user $project_dir/pub/media/
+#sudo chmod -R g+w $project_dir/var/
+#sudo chmod -R g+w $project_dir/pub/media/
+#echo "\n Block Execute permissions for files async [Only Linux user can execute] ..."
+#sudo find . -type f -exec chmod g-x,o-x {} > /dev/null 2>&1 &
