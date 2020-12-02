@@ -5,7 +5,7 @@ LEMP (Linux, NGINX, MySQL (MariaDb), PHP) is a very common example of a web serv
 
 Since its creation, the LEMP model has been adapted to other componentry, though typically consisting of free and open-source software. 
 
- "LEMP" now refers to a generic software stack model. The modularity of a LEMP stack may vary, but this particular software combination has become popular because it is sufficient to host a wide variety of website frameworks, such as Magento 2, Shopware 6, Silyus,  WordPress and Drupal. The components of the LAMP stack are present in the software repositories of most Linux distributions.
+ "LEMP" now refers to a generic software stack model. The modularity of a LEMP stack may vary, but this particular software combination has become popular because it is sufficient to host a wide variety of website frameworks, such as Magento 2, Shopware 6, Sylius,  WordPress and Drupal. The components of the LAMP stack are present in the software repositories of most Linux distributions.
 Curtan reposetory wors for EC2 AWS LINUX2 / Centos 7 / RedHat 7
 
 The LAMP bundle can be combined with many other free and open-source software packages, MAgento uses REdis 6.0 and Elastic Search aditionaly.
