@@ -1,4 +1,6 @@
 
+# Tested on centos 7 only 
+
 sudo tee /etc/yum.repos.d/pgdg.repo<<EOF
 [pgdg12]
 name=PostgreSQL 12 for RHEL/CentOS 7 - x86_64
