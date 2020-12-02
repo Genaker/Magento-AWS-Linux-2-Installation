@@ -11,7 +11,10 @@ EOF
 
 
 sudo yum install postgresql12 postgresql12-server -y
+
+//way to get extensions
 sudo  yum install postgresql12-contrib -y
+
 sudo yum install php-pgsql -y
 
  sudo /usr/pgsql-12/bin/postgresql-12-setup initdb
@@ -28,9 +31,14 @@ sudo yum install php-pgsql -y
  
  sudo -u postgres psql magento -c 'CREATE INDEX idxgin ON product USING gin (data);'
  
- sudo -u postgres psql magento -c 'CREATE EXTENSION pg_trgm;'
+ sudo -u postgres psql magento -c 'CREATE EXTENSION pg_trgm;';
+ 
+ sudo -u postgres psql magento -c 'CREATE EXTENSION "btree_gin"';
  
  sudo -u postgres psql -c 'SHOW config_file'
+ 
+ 
+ //create index tt_jb_int_idx on product using gin( cast (data->>'row_id' as int));
  //CREATE INDEX idx_btree_product_ASdsad ON product USING BTREE ((data->>'row_id'));
  //CREATE INDEX trgm_idx_users_first ON product USING gin ((data->>'sku') gin_trgm_ops);
  
