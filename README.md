@@ -48,4 +48,8 @@ sudo bash install-all.sh
 ```
 You probably need some customization. Also, you can create your own configuration. For example, You wanna use AWS services MYSQL RDS, ElastiCahe Redis, Elastic Search you can remove those components. If you have any issues create the ticket and I help you. 
 
+# Support and Questions 
+
+Send email to: yegorshytikov@gmail.com or create ticke/issue. 
+
 
