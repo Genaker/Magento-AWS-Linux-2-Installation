@@ -46,7 +46,7 @@ else
   exit 1
 fi
 
-sudo yum install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel $OS_RELATED -y
+sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel $OS_RELATED
 
 echo "PHP $PHP_VERSION is installed "
  
