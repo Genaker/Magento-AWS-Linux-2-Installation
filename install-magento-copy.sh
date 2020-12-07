@@ -17,7 +17,7 @@ cd {path to magento}
 
 cp magento.tar.gz pub/media/
 
-wget http://{{PATH}}/media/magento.zip
+wget http://{{PATH}}/media/magento.gz
 
 mkdir -p  /var/www/html/magento/
 
