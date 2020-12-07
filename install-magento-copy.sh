@@ -21,7 +21,7 @@ wget http://{{PATH}}/media/magento.zip
 
 mkdir -p  /var/www/html/magento/
 
-tar -xzf magento.zip --directory /var/www/html/magento/
+tar -xzf magento.tar.gz --directory /var/www/html/magento/
 
 ## gzip -d magento.zip
 
