@@ -23,7 +23,7 @@ bash ./install-nginx.sh
 
 echo "Install MYSQL/MARIA DB \n"
 
-bash ./install-maria-db-aws-extras.sh
+bash ./install-mariadb-docker.sh
 
 #echo "Install Elastic Search \n"
 
