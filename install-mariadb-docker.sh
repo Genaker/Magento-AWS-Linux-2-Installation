@@ -11,14 +11,14 @@ if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
   echo "Install Uing Amazon Linux Extras"
   OSRELEASE="7"
-  sudo yum install docker
+  sudo yum install docker -y
 
 elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   echo "Install Uing Centos 8"
   OSRELEASE="8"
   sudo curl -fsSL https://get.docker.com/ | sh
-  sudo yum install docker-ce
+  sudo yum install docker-ce -y
 else
   echo "$LINUX_VERSION Linux is not supported"
   exit 1
