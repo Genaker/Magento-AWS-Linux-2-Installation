@@ -29,4 +29,6 @@ bash ./install-maria-db-aws-extras.sh
 
 #./install-elastic-search.sh
 
-#echo "Install Magento"
+## echo "Install Magento \n"
+
+#bash ./install-magento-composer.sh
