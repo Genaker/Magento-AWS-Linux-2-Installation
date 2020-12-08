@@ -30,7 +30,9 @@ tar -xzf magento.tar.gz --directory /var/www/html/magento/
 ## gzip -d magento.zip
 
 sed -i '/@@GLOBAL.GTID_PURGED=/d' your_file.sql
+sed -i 's/`modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT /`modified` timestamp NOT NULL DEFAULT 0 COMMENT /g' ../myMagentoDatabaseDump.sql
 
+## Add -f parameters to ignore errors if you have it.
 mysql -h {host} -u {user} -p'{password}' {db_name} | gzip > mysqldump.sql.gz
 
 mysql -h {host} -u {user} -e "create database magento2";
