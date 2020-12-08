@@ -23,6 +23,10 @@ mkdir -p  /var/www/html/magento/
 
 tar -xzf magento.tar.gz --directory /var/www/html/magento/
 
+## Configure Nginx by running script:
+
+# sudo bash configure-nginx.sh
+
 ## gzip -d magento.zip
 
 mysql -h {host} -u {user} -p'{password}' {db_name} | gzip > mysqldump.sql.gz
