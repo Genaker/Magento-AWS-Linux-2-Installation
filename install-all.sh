@@ -7,6 +7,7 @@ echo "Install PHP \n"
 bash ./install-php.sh
 bash ./configure-php.sh
 bash ./install-tideways-profiler.sh
+bash ./install-composer.sh
 
 echo "Install NGINX \n"
 
