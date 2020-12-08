@@ -34,6 +34,10 @@ docker images
 
 sudo gpasswd -a "${USER}" docker
 
+su - $USER
+
+##chmod 777 /var/run/docker.sock
+
 # ToDo: volume my.conf and db files
 
 sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=root -d mariadb:latest
