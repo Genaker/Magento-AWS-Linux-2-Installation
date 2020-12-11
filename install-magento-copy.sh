@@ -37,5 +37,8 @@ mysql -h {host} -u {user} -p'{password}' {db_name} | gzip > mysqldump.sql.gz
 
 mysql -h {host} -u {user} -e "create database magento2";
 
+#  UPDATE core_config_data set value = 0 where path like "web/secure/use_in_%";
+#  UPDATE core_config_data set value = "http://{{magento.url}}/" where path like "web/%/base_url";
+
 
 
