@@ -39,3 +39,7 @@ echo "0 0,12 * * * root python -c 'import random; import time; time.sleep(random
 sudo service nginx restart
 
 sudo yum-config-manager --disable epel
+
+# renew certificate  
+
+# sudo certbot renew
