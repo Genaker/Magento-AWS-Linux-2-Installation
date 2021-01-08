@@ -31,4 +31,6 @@ systemctl enable elasticsearch.service
 systemctl restart elasticsearch.service
 #/usr/share/elasticsearch/bin/elasticsearch-setup-passwords auto
 
+echo "ES Cluster Name : magento | Node: magento-node1 | Port: 9200 \n"
+
 curl localhost:9200/
