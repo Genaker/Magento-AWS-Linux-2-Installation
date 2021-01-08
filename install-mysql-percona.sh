@@ -10,4 +10,14 @@ dnf module disable -y mysql
 percona-release setup ps57
 sudo dnf install Percona-Server-server-57 Percona-Server-client-57
 
+echo "MySQL ROOT Password:\n"
+cat /var/log/mysqld.log |grep generated
+
+systemctl enable mysqld 
+
+systemctl start mysqld.service
+
+
+
+
   
