@@ -1,5 +1,7 @@
 #!/bin/bash
 
+ELKREPO="7.x"
+
 #install Elastic Search
 
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
@@ -14,7 +16,7 @@ autorefresh=1
 type=rpm-md
 EOF
 
-sudo yum -y -q install --enablerepo=elasticsearch-7.x elasticsearch
+sudo yum -y -q install --enablerepo=elasticsearch-${ELKREPO} elasticsearch
 
 #echo "xpack.security.enabled: true" >> /etc/elasticsearch/elasticsearch.yml
 sed -i "s/.*cluster.name.*/cluster.name: magento/" /etc/elasticsearch/elasticsearch.yml
