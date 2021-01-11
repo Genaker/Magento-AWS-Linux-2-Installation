@@ -59,7 +59,15 @@ END
 
 cd ..
 
+#auto start Redis after searver reload 
 sudo systemctl enable redis
+
 sudo systemctl start redis
 
 sudo service redis status --no-pager
+
+#   It is also possible to remove all the previously configured save
+#   points by adding a save directive with a single empty string argument
+#   like in the following example:
+#
+#   save ""
