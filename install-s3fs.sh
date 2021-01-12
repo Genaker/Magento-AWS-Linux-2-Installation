@@ -4,6 +4,8 @@
 
 # test S3 speed: dd if=/dev/zero of=test2.img bs=100M count=1 oflag=dsyn
 
+# Replace this variables with you stuf 
+
 export S3_MOUNT_PATH='/var/www/html/magento/pub/media/'
 export AWS_S3FS_KEY=***
 export AWS_S3FS_SECRET='***'
@@ -34,7 +36,7 @@ else
   #chmod 600 /etc/s3fs/.passwd-s3fs
   aws configure set aws_access_key_id $AWS_S3FS_KEY --profile s3fs
   aws configure set aws_secret_access_key $AWS_S3FS_SECRET --profile s3fs
-  #TODO: region put into varriables 
+  # TODO: region put into varriables 
   aws configure set region us-wast-2 --profile s3fs
 
   cd /usr/src/
