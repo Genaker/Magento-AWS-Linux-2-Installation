@@ -13,6 +13,12 @@ ls -lh magento.tar.gz
 #dump MYSQL you can also zip the dump
 mysql -h {{HOST}} -u {{}} -p'{{}}' {{DB_NAME}}  > mysqldump.sql
 
+# Check MySQL database size 
+
+# SELECT table_schema AS "Database", ROUND(SUM(data_length + index_length) / 1024 / 1024, 2) AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema;
+
+#  
+
 # To check DB credentials 
 
 cat app/etc/env.php | grep "db\|password\|host\|user"
