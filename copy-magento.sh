@@ -4,11 +4,13 @@
 # Go to magento root dirrectory 
 cd {MAgento pathc}
 
-# archive all files except media var pub/static/ vendor/etc or you can copy everething 
-tar -pczf magento.tar.gz --exclude "*/pub/media/*" .
-
+# archive all files except media var pub/static/ vendor/etc and other garbage or you can copy everething 
+tar -pczf magento.tar.gz --exclude "*/pub/media/*" --exclude "*/var/*" --exclude "*.zip" --exclude "*.sql" --exclude "*.tar*" --exclude "*.gz*" --exclude "*.tgz" .
+ 
 #dump MYSQL you can also zip the dump
 mysql -h {{HOST}} -u {{}} -p'{{}}' {{DB_NAME}}  > mysqldump.sql
+
+# I like download that files by placing it to pub/media floder. However don't forgot remove it after. 
 
 # SSH to the new enviroment 
 
