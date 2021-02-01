@@ -52,4 +52,23 @@ You probably need some customization. Also, you can create your own configuratio
 
 Send email to: yegorshytikov@gmail.com or create ticke/issue. 
 
+# General Configuation:
 
+## Nginx 
+
+/etc/nginx
+
+/etc/nginx/conf.d/magento.conf  - magento related config 
+
+## Redis 
+
+nano /etc/redis/redis.conf
+
+## PHP 
+
+/etc/php-fpm.d/www.conf
+/etc/php.ini
+
+## Magento 
+
+/var/www/html/magento - root dirrectory
