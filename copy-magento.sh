@@ -15,7 +15,7 @@ mysql -h {{HOST}} -u {{}} -p'{{}}' {{DB_NAME}}  > mysqldump.sql
 
 # To check DB credentials 
 
-cat app/etc/env.php | grep "db\|password\|host"
+cat app/etc/env.php | grep "db\|password\|host\|user"
 
 # I like download that files by placing it to pub/media floder. However don't forgot remove it after. 
 
