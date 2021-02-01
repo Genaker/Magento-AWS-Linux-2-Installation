@@ -17,9 +17,9 @@ echo "Install Redis \n"
 
 bash ./install-redis-compile.sh
 
-echo "Install Nginx \n"
+echo "Configure Nginx \n"
 
-bash ./install-nginx.sh
+bash ./configure-nginx.sh
 
 echo "Install MYSQL/MARIA DB \n"
 
