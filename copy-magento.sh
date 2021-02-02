@@ -27,6 +27,10 @@ cat app/etc/env.php | grep "db\|password\|host\|user"
 
 # SSH to the new enviroment 
 
+# Copy dump files :
+
+scp {user}@{ip}:/../public_html/dump.sql .
+
 # undump zip and sql
 
 sudo tar -xzf magento.tar.gz -C magento
