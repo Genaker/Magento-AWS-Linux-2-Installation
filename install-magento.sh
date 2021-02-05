@@ -32,6 +32,8 @@ fi
 --use-rewrites=1 $ELASTIC_INSTALL
 
 yes | /var/www/html/magento/bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=127.0.0.1 --cache-backend-redis-db=0
+yes | /var/www/html/magento/bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=127.0.0.1 --page-cache-redis-db=1
+yes | /var/www/html/magento/bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=4 --session-save-redis-db=2
 
 echo "http://$MAGE_DOMAIN"
 
