@@ -14,6 +14,8 @@ if [[ "$MAGENTO_VERSION" == *"2.4"* ]]; then
 --elasticsearch-port=9200"
 fi
 
+## sometimes requires error_reporting(E_ALL ^ (E_NOTICE | E_WARNING | E_DEPRECATED)); in the app/bootstrap.php
+
 
 /var/www/html/magento/bin/magento  setup:install \
 --base-url=http://${MAGE_DOMAIN}/ \
