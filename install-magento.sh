@@ -4,6 +4,8 @@ MAGE_DOMAIN=$(curl ipinfo.io/ip)
 
 mysql -e 'Create database magento2;' -h localhost -u root
 
+cd /var/www/html/magento/bin/magento
+
 MAGENTO_VERSION=$(bin/magento --version)
 ELASTIC_INSTALL=""
 
