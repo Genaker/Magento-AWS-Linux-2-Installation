@@ -4,7 +4,7 @@
 
 echo "Install Redis"
 
-yum install make -y 
+yum install wget make -y 
 sudo yum install gcc -y
 
 wget http://download.redis.io/redis-stable.tar.gz 
