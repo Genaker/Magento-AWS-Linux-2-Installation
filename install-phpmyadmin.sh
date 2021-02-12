@@ -49,5 +49,7 @@ yarn install
 
 cp config.sample.inc.php config.inc.php
 
+service nginx restart
+
 ## if Login without a password is forbidden by configuration (see AllowNoPassword)
 ## $cfg['Servers'][$i]['AllowNoPassword'] = true; in config.sample.inc.php to use without password
