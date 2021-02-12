@@ -45,7 +45,7 @@ curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash
 sudo yum install nodejs -y
 sudo yum install yarn -y
 
-npm install
+yarn install
 
 cp config.sample.inc.php config.inc.php
 
