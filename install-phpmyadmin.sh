@@ -12,10 +12,10 @@ composer install --no-dev
 
 cat > /etc/nginx/conf.d/phpmyadmin.conf<<EOF
 server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
+        listen 80;
+        listen [::]:80;
 
-        server_name _;
+        server_name _; # You need replace this with your IP or mysqlphp specific IP 
         root /var/www/html;
         index index.php index.html;
 
