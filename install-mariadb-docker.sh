@@ -63,3 +63,7 @@ mysql -h 127.0.0.1 -u root -p'root' -e 'select Version();'
 # docker ps  -a
 # docker commit <CONTAINERID> mariadb:my
 
+# IF you have issue PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'172.17.0.1' 
+
+# do this to fix : https://medium.com/tech-learn-share/docker-mysql-access-denied-for-user-172-17-0-1-using-password-yes-c5eadad582d3
+
