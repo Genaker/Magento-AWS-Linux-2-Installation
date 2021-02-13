@@ -36,7 +36,7 @@ sudo gpasswd -a "${USER}" docker
 
 sudo su - $USER
 
-##chmod 777 /var/run/docker.sock
+sudo chmod 777 /var/run/docker.sock
 
 # ToDo: volume my.conf and db files
 
