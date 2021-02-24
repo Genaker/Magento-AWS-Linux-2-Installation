@@ -8,6 +8,7 @@ sudo usermod -aG docker ec2-user
 yum install iptables-services -y
 
 sudo service docker start
+sudo systemctl enable docker.service
 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
