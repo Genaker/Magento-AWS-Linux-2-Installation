@@ -33,7 +33,7 @@ scp {user}@{ip}:/../public_html/dump.sql .
 
 # undump zip and sql
 
-sudo tar -xzf magento.tar.gz -C magento
+sudo tar -xzf magento.tar.gz -C magento --skip-old-files
 
 
 # SET: AUTOCOMMIT=0, UNIQUE_CHECKS=0, FOREIGN_KEY_CHECKS=0 (AND DON'T FORGET TO ROLLBACK THIS CHANGES)
