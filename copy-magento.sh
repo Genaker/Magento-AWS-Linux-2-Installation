@@ -5,7 +5,7 @@
 cd {MAgento pathc}
 
 # archive all files except media var pub/static/ vendor/etc and other garbage or you can copy everething 
-tar -pczf magento.tar.gz --exclude "*/pub/media/*" --exclude "*/var/*" --exclude "*.zip" --exclude "*.sql" --exclude "*.tar*" --exclude "*.gz*" --exclude "*.tgz" .
+tar -pczf magento.tar.gz --warning=no-file-changed --exclude "*/pub/media/*" --exclude "*/var/*" --exclude "*.zip" --exclude "*.sql" --exclude "*.tar*" --exclude "*.gz*" --exclude "*.tgz" .
 
 #check Size of the dump file 
 ls -lh magento.tar.gz
