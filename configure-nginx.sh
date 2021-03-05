@@ -12,6 +12,11 @@ server {
   server_name _;
   set \$MAGE_ROOT /var/www/html/magento;
   
+  # Cloud Flare SSL Flexible 
+  # fastcgi_param  HTTPS on;  
+  proxy_set_header X-Forwarded-Proto $scheme;
+
+  
   ##ADDITIONAL_CONFIG
   
   include /var/www/html/magento/nginx.conf.sample;
