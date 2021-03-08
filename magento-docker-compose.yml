@@ -1,0 +1,60 @@
+version: '3.3'
+services:
+  magento:
+    network_mode: host
+    image: registry.digitalocean.com/saas/magento-saas:latest
+    container_name: magento
+    privileged: true
+    command: --innodb-doublewrite=0 --innodb-large-prefix=1
+#    ports:
+#      - "80:80"
+#    links:
+#      - elasticsearch
+#      - db
+    volumes: 
+#      - /var/www/html/magento:/var/www/html/magento  
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    env_file:
+      - env
+# Update sinle container command : docker-compose up -d --no-deps db
+  db:
+    image: mysql:5.7.33
+    network_mode: host
+    volumes:
+      - db-data:/var/lib/mysql/data
+    env_file:
+      - env
+#  phpmyadmin:
+#    image: phpmyadmin/phpmyadmin
+#    ports:
+#      - "8580:80"
+#    links:
+#      - db     
+
+
+# Container Docs https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.8.13
+    network_mode: host
+    container_name: elasticsearch
+    environment:
+      - node.name=elasticsearch
+      - discovery.type=single-node
+      - number_of_shards=1
+      - "ES_JAVA_OPTS=-Xms212m -Xmx212m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+#    volumes:
+#      - data01:/usr/share/elasticsearch/data
+#      - ${PWD}/elasticsearch.yml:/etc/elasticsearch/config/elasticsearch.yml
+#    ports:
+#      - 9200:9200
+#    networks:
+#      - elastic
+
+volumes:
+#  magento-data:
+  db-data:
+  data01:
