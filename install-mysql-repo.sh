@@ -24,4 +24,4 @@ mysql -e 'Select Version()';
 
 ## Check if Mysql is Running 
 
-systemctl is-active --quiet mysql  ||  (mkdir -p /var/run/mysqld/ && sudo chmod -R 777 /var/run/mysqld/ && sudo service mysql restart)
+# systemctl is-active --quiet mysql  ||  (mkdir -p /var/run/mysqld/ && sudo chmod -R 777 /var/run/mysqld/ && sudo service mysql restart)
