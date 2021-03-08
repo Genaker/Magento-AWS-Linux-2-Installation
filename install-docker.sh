@@ -1,10 +1,10 @@
 #!/bin/bash
 
 
-
 curl -fsSL https://get.docker.com -o get-docker.sh 
 sudo sh get-docker.sh || (sudo amazon-linux-extras install docker && sudo yum install docker && sudo usermod -a -G docker ec2-user)
-sudo usermod -aG docker ec2-user
+sudo usermod -aG docker $USER
+
 
 # Issue is ip table is not installed
 yum install iptables-services -y
