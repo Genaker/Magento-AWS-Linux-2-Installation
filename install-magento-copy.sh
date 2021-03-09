@@ -23,6 +23,10 @@ mkdir -p  /var/www/html/magento/
 
 tar -xzf magento.tar.gz --directory /var/www/html/magento/
 
+## Archive Media Files
+# tar -czvf magento-media.tar.gz /var/www/html/magento/pub/media/catalog/product/
+## OR UPDATE core_config_data set value = 'https://www.site.com/media/' where path like "web/unsecure/base_media_url";
+
 ## Configure Nginx by running script:
 
 # sudo bash configure-nginx.sh
@@ -39,6 +43,3 @@ mysql -h {host} -u {user} -e "create database magento2";
 
 #  UPDATE core_config_data set value = 0 where path like "web/secure/use_in_%";
 #  UPDATE core_config_data set value = "http://{{magento.url}}/" where path like "web/%/base_url";
-
-
-
