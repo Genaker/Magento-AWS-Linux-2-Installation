@@ -4,7 +4,7 @@ cd /var/www/html/
 
 timestamp=$(date +%s)
 
-sudo git clone https://github.com/phpmyadmin/phpmyadmin.git phpmyadmin$timestamp
+sudo git clone --single-branch https://github.com/phpmyadmin/phpmyadmin.git phpmyadmin$timestamp
 
 cd ./phpmyadmin$timestamp
 
