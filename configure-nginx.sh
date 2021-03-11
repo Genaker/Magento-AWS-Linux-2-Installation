@@ -14,7 +14,7 @@ server {
   
   # Cloud Flare SSL Flexible 
   # fastcgi_param  HTTPS on;  
-  proxy_set_header X-Forwarded-Proto $scheme;
+  # proxy_set_header X-Forwarded-Proto $scheme;
 
   
   ##ADDITIONAL_CONFIG
