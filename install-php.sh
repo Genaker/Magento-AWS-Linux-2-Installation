@@ -49,6 +49,13 @@ fi
 
 sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel $OS_RELATED
 
+## downgrade php 
+# 
+# yum module reset php -y
+# yum -y module enable php:remi-7.2
+# https://computingforgeeks.com/enable-powertools-repository-on-centos-rhel-linux/
+# yum --disablerepo=remi-php74 --enablerepo=remi-php72 install php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel php72-php-pecl-mcrypt php72-php-pecl-redis
+
 echo "PHP $PHP_VERSION is installed "
  
 # sudo pecl install mcrypt-1.0.2 -y
