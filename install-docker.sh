@@ -20,3 +20,5 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 # Test Docker Compose
 docker-compose --version
+
+sudo chmod 666 /var/run/docker.sock
