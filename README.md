@@ -72,3 +72,42 @@ nano /etc/redis/redis.conf
 ## Magento 
 
 /var/www/html/magento - root dirrectory
+
+## Configure Nginx with MAgento 
+
+Finally, configure Nginx site configuration file for Magento. This file will control how users access Magento content. Run the commands below to create a new configuration file called example.com.
+
+sudo nano /etc/nginx/sites-available/example.com
+
+Then copy and paste the content below into the file and save it. Replace the highlighted line with your own domain name and directory root location…
+
+Also make sure to reference the certificate files created above during Cloudflare setup..
+```
+upstream fastcgi_backend {
+  server   fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name  example.com www.example.com;
+    index  index.php;
+
+    ssl_certificate /etc/ssl/certs/cloudflare_example.com.pem;
+    ssl_certificate_key /etc/ssl/private/cloudflare_example.com.pem;
+    ssl_client_certificate /etc/ssl/certs/origin-pull-ca.pem;
+    ssl_verify_client on;
+
+    set $MAGE_ROOT /var/www/html/example.com;
+    set $MAGE_MODE production;
+
+    access_log /var/log/nginx/example.com-access.log;
+    error_log /var/log/nginx/example.com-error.log;
+
+    include /var/www/html/example.com/nginx.conf.sample;
+}
+```
+Save the file and exit.
