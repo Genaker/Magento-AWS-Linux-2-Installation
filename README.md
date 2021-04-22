@@ -1,4 +1,7 @@
 # Magento Commerce Cloud to AWS Linux 2 (Centos 7) / Azure Centos 8.2 Installation migration tool with ARM Graviton2 instances support  
+
+If you have any questions or issues feel free to send me an email – yegorshytikov@gmail.com
+
 Every merchant wants to have a faster website and pay less for hosting. Magento Commerce Cloud works only for small projects without traffic. If you are having 2+ requests per second you will safer with Magento cloud, because it was designed not for Magento. It is the Platform.SH hosting for Drupal. And really it is not a real cloud it just uses Amazon Web Services to buy instances. The best way to improve performance and price it is to buy services directly from AWS without any gasket. Also, Magento Cloud also supports only Commerce/Enterprise clients, not the Open Source free version. 
 This Open Source project simplifies the creation, maintenance, validation, sharing, and deployment of the Magento 2 and LEMP stack installation.
 LEMP (Linux, NGINX, MySQL (MariaDB), PHP) is a very common example of a web service stack, named as an acronym of the names of its original four open-source components: the Linux operating system, the NGINX HTTP Server, the MySQL relational database management system (RDBMS), and the PHP programming language. The LEMP components are largely interchangeable and not limited to the original selection. As a solution stack, LEMP is suitable for building dynamic web sites and web applications.
