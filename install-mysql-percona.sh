@@ -19,7 +19,6 @@ cat /var/log/mysqld.log |grep generated
 
 mysql -h localhost -p -u root  --connect-expired-password -e 'ALTER USER `root`@`localhost` IDENTIFIED BY "{InsertYourPassword-there123}", `root`@`localhost` PASSWORD EXPIRE NEVER;'
 
-
 systemctl enable mysqld 
 
 systemctl start mysqld.service
