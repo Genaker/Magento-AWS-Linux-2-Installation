@@ -10,6 +10,8 @@ read MAGENTO_DOMAIN
 
 sudo sed -i 's/server_name _;/server_name $MAGENTO_DOMAIN;/g' /etc/nginx/conf.d/magento.conf
 
+echo "\n NOTICE: your domains should pass the validation/chalange (https://letsencrypt.org/docs/challenge-types/) \n"
+
 sudo certbot --nginx
 
 # You shuld See Something like 
