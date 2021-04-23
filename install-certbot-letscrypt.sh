@@ -3,6 +3,10 @@
 sudo yum-config-manager --enable epel
 
 sudo yum install certbot python3-certbot-nginx
+# in some cases python2-certbot-nginx
+
+echo "\nEnter domain names separated by spaces: "  
+read MAGENTO_DOMAIN  
 
 sudo sed -i 's/server_name _;/server_name $MAGENTO_DOMAIN;/g' /etc/nginx/conf.d/magento.conf
 
