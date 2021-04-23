@@ -8,7 +8,8 @@ sudo yum install certbot python3-certbot-nginx
 echo "\nEnter domain names separated by spaces: "  
 read MAGENTO_DOMAIN  
 
-sudo sed -i 's/server_name _;/server_name $MAGENTO_DOMAIN;/g' /etc/nginx/conf.d/magento.conf
+#if not empty
+[[ ! -z "$MAGENTO_DOMAIN" ]] && sudo sed -i 's/server_name _;/server_name $MAGENTO_DOMAIN;/g' /etc/nginx/conf.d/magento.conf
 
 echo "\n NOTICE: your domains should pass the validation/chalange (https://letsencrypt.org/docs/challenge-types/) \n"
 
