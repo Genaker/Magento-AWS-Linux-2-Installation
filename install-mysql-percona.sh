@@ -1,5 +1,8 @@
 #!/bin/bash
 
+## Cleanup Mysql Packages 
+yum remove mysql* -y
+
 REPO_PERCONA="https://repo.percona.com/yum/percona-release-latest.noarch.rpm"
 sudo yum install -y -q $REPO_PERCONA
 echo "Percona 8.0 database installation:\n"
