@@ -50,11 +50,16 @@ fi
 sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel $OS_RELATED
 
 ## downgrade php 
+#
+# yum remove php-cli mod_php php-common
 # 
 # yum module reset php -y
 # yum -y module enable php:remi-7.2
 # https://computingforgeeks.com/enable-powertools-repository-on-centos-rhel-linux/
 # yum install php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel php72-php-pecl-mcrypt php72-php-pecl-redis
+# sudo yum --enablerepo="power*" --enablerepo="epel"  install php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel php73-php-pecl-mcrypt php73-php-pecl-redis
+
+
 
 # systemctl start php-fpm
 # systemctl enable php-fpm
