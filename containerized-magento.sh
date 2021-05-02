@@ -2,7 +2,7 @@
 
 echo "Install Necessary software:\n"
 
-bash ./docker-prepare.sh
+bash ./install-prepare.sh
 
 echo "Install Docker + Dockr-Compose:\n"
 
