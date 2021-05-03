@@ -21,21 +21,13 @@ echo "Install Redis \n"
 
 bash ./install-redis-compile.sh
 
-echo "Configure Nginx \n"
-
-bash ./configure-nginx.sh
-
 echo "Install MYSQL/MARIA DB \n"
 
 bash ./install-mariadb-docker.sh
 
 echo "Install Elastic Search \n"
 
-./install-elastic-search.sh
-
-echo "Install Magento \n"
-
-bash ./install-monorepo-git.sh
+bash ./install-elastic-search.sh
 
 echo "Install Magento \n"
 
