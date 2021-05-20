@@ -34,7 +34,7 @@ docker images
 
 sudo gpasswd -a "${USER}" docker
 
-sudo su - $USER
+source ~/.bashrc
 
 sudo chmod 777 /var/run/docker.sock
 
