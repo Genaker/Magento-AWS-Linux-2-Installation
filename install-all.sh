@@ -13,13 +13,13 @@ echo "Install NGINX \n"
 
 bash ./install-nginx.sh
 
-echo "Install Redis \n"
-
-bash ./install-redis-compile.sh
-
 echo "Configure Nginx \n"
 
 bash ./configure-nginx.sh
+
+echo "Install Redis \n"
+
+bash ./install-redis-compile.sh
 
 echo "Install MYSQL/MARIA DB \n"
 
