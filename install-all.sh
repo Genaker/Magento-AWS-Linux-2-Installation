@@ -25,9 +25,9 @@ echo "Install MYSQL/MARIA DB \n"
 
 bash ./install-mariadb-docker.sh
 
-#echo "Install Elastic Search \n"
+echo "Install Elastic Search \n"
 
-#./install-elastic-search.sh
+./install-elastic-search.sh
 
 ## echo "Install Magento \n"
 
