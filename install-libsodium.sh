@@ -14,7 +14,7 @@ sudo yum install libsodium libsodium-devel -y
 
 sudo pecl install libsodium
 
-sudo yum --enablerepo="power*" --enablerepo="epel"  install php-sodium
+sudo yum --enablerepo="power*" --enablerepo="epel"  install php-sodium -y
 
 # echo "extension=sodium.so" >> /etc/php.ini
 
