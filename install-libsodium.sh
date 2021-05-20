@@ -1,5 +1,9 @@
 #!/bin/bash
 
+$LINUX_VERSION=$(cat /etc/system-release)
+
+echo $LINUX_VERSION
+
 # Install Lib Sodium PHP
 if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
