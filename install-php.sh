@@ -61,8 +61,8 @@ sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-so
 
 bash ./install-libsodium.sh
 
-# systemctl start php-fpm
-# systemctl enable php-fpm
+service php-fpm start
+systemctl enable php-fpm
 
 echo "PHP $PHP_VERSION is installed "
  
