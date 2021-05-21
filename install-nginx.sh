@@ -34,6 +34,8 @@ else
   exit 1
 fi
 
+systemctl enable nginx
+
 nginx -v
 
 echo "Install finished"
