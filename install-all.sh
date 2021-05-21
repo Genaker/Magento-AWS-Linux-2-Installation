@@ -27,7 +27,7 @@ bash ./install-mariadb-docker.sh
 
 echo "Install Elastic Search \n"
 
-./install-elastic-search.sh
+bash ./install-elastic-search.sh
 
 ## echo "Install Magento \n"
 
