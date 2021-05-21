@@ -34,6 +34,7 @@ else
   exit 1
 fi
 
+service nginx start
 systemctl enable nginx
 
 nginx -v
