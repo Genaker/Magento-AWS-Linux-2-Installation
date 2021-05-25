@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$LINUX_VERSION=$(cat /etc/system-release)
+LINUX_VERSION=$(cat /etc/system-release)
 
 echo $LINUX_VERSION
 
