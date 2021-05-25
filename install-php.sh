@@ -17,7 +17,7 @@ then
   # to downgarede use disable command
   #sudo amazon-linux-extras disable php7.4 
   # sudo yum autoremove php php-common
-  sudo amazon-linux-extras install php${PHP_VERSION} 
+  sudo yes | sudo amazon-linux-extras install php${PHP_VERSION} 
   # sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap}
   OS_RELATED = " php-redis php-pear libmcrypt libmcrypt-devel php-mcrypt "
   
