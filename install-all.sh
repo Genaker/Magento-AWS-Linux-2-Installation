@@ -2,7 +2,7 @@
 
 set -x
 
-echo "Installing Utilites \n"
+echo "Installing Utilities \n"
 
 bash ./install-prepare.sh
 
