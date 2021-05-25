@@ -2,6 +2,10 @@
 
 set -x
 
+echo "Installing Utilites \n"
+
+bash ./install-prepare.sh
+
 echo "Install PHP \n"
 
 bash ./install-php.sh
