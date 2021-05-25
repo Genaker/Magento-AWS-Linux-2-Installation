@@ -8,7 +8,7 @@ echo $LINUX_VERSION
 if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
 
-sudo amazon-linux-extras install epel
+sudo yes | sudo amazon-linux-extras install epel
 
 fi
 
