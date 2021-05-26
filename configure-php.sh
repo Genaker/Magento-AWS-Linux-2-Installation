@@ -60,4 +60,11 @@ echo "/etc/php.ini loaded [ok]"
 
 sudo usermod -a -G apache ec2-user
 
+sudo echo "net.core.somaxconn = 20000" >> /etc/sysctl.conf
+sudo echo "net.core.netdev_max_backlog = 65535" >> /etc/sysctl.conf
+sudo sysctl -p
+sudo service php-fpm restart
+
+
+
 
