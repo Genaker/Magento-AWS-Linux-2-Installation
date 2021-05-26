@@ -59,6 +59,11 @@ END
 
 cd ..
 
+# save ""
+
+# Disable save on disc
+sed -i 's/# save ""/save ""/g'  /etc/redis/redis.conf
+
 #auto start Redis after searver reload 
 sudo systemctl enable redis
 
