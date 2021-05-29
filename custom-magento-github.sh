@@ -24,6 +24,8 @@ composer install # use instal if you are having Lock file or Update if without
 
 # rm /production_dump.sql.gz 
 
+# select * from core_config_data where path regexp ".*base.*url.*";
+
 # change magento configurations
 
 # for HTTPS
@@ -44,6 +46,8 @@ composer install # use instal if you are having Lock file or Update if without
 # UPDATE core_config_data set value = "http://18.221.109.71/" where path like "%base_url%";
 
 # UPDATE core_config_data set value = "0" where path like "%web/secure/use_in%"
+
+
 
 
 rm -rf ./app/env.php
