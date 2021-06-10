@@ -29,6 +29,19 @@ enabled=1
 module_hotfixes=true
 END
   sudo yum -y install nginx
+elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
+then
+  echo "Oracle Linux Server release 8"
+  OSRELEASE="8"
+  cat > /etc/yum.repos.d/nginx.repo <<END
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/\$releasever/\$basearch/
+gpgcheck=0
+enabled=1
+module_hotfixes=true
+END
+  sudo yum -y install nginx
 else
   echo "$LINUX_VERSION Linux is not supported"
   exit 1
