@@ -42,41 +42,19 @@ then
   yum module reset php -y
   yum -y module enable php:remi-$PHP_VERSION
   OS_RELATED=" php74-php-pecl-mcrypt php74-php-pecl-redis "
-else
-  echo "$LINUX_VERSION Linux is not supported"
-  exit 1
-fi
 
-elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 7.9"
+
+elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
-  sudo yum install -y oracle-php-release-el7 && \
-  yum config-manager --set-enabled remi
-  yum module reset php -y
-  yum -y module enable php:remi-$PHP_VERSION
-  OS_RELATED=" php74-php-pecl-mcrypt php74-php-pecl-redis "
-else
-  echo "$LINUX_VERSION Linux is not supported"
-  exit 1
-fi
-
-elif echo $LINUX_VERSION | grep -q "Oracle"
-then
-
-  wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-  sudo rpm -ivh epel-release-latest-7.noarch.rpm
- 
-  wget http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
-  sudo rpm -Uvh remi-release-7.rpm
   
+ yum module reset php -y
+
+ sudo dnf module enable php:7.4
+
+  OS_RELATED="php-pear php74-php-pecl-mcrypt php74-php-pecl-redis "
   
-  # yum --enablerepo=remi install
-
-  sudo yum -y install yum-utils
-  sudo yum-config-manager --enable remi-php$PHP_VERSION
-
-  #yum -y module enable php:remi-$PHP_VERSION
-  OS_RELATED=" php-mcrypt php-redis "
+  sudo pecl install redis
 else
   echo "$LINUX_VERSION Linux is not supported"
   exit 1
