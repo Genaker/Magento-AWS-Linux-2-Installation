@@ -14,6 +14,8 @@ then
   
   sudo yum install -y https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
   
+  sudo yum install -y mysql-community-client
+  
   OSRELEASE="7"
   sudo yum install docker -y
 
@@ -59,8 +61,6 @@ sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=root --resta
 
 # mysql-cli
 
-
-sudo yum install -y mysql-community-client
 
 sudo yum install mysql -y
 
