@@ -50,11 +50,11 @@ then
   
  yum module reset php -y
 
- sudo dnf module enable php:7.4
+ sudo dnf module enable php:7.4 -y
 
   OS_RELATED="php-pear php74-php-pecl-mcrypt php74-php-pecl-redis "
   
-  sudo pecl install redis
+  sudo pecl install redis 
 else
   echo "$LINUX_VERSION Linux is not supported"
   exit 1
