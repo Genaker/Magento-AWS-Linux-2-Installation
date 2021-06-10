@@ -9,7 +9,11 @@ echo $LINUX_VERSION
 
 if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
+
   echo "Install Uing Amazon Linux Extras"
+  
+  sudo yum install -y https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+  
   OSRELEASE="7"
   sudo yum install docker -y
 
@@ -19,6 +23,16 @@ then
   OSRELEASE="8"
   sudo curl -fsSL https://get.docker.com/ | sh
   sudo yum install docker-ce -y
+
+
+elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
+then
+  echo "Install Uing Oracle 8"
+  OSRELEASE="8"
+  #sudo curl -fsSL https://get.docker.com/ | sh
+  sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+  sudo yum install docker-ce -y
+
 else
   echo "$LINUX_VERSION Linux is not supported"
   exit 1
@@ -45,7 +59,6 @@ sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=root --resta
 
 # mysql-cli
 
-sudo yum install -y https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 
 sudo yum install -y mysql-community-client
 
@@ -69,4 +82,3 @@ mysql -h 127.0.0.1 -u root -p'root' -e 'select Version();'
 # IF you have issue PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'172.17.0.1' 
 
 # do this to fix : https://medium.com/tech-learn-share/docker-mysql-access-denied-for-user-172-17-0-1-using-password-yes-c5eadad582d3
-
