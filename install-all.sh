@@ -40,5 +40,5 @@ bash ./install-elastic-search.sh
 
 echo "Install Magento Monorepo \n"
 
-bash ./install-magento-monorepo.sh
+bash ./install-monorepo-git.sh
 #bash ./install-magento-composer.sh
