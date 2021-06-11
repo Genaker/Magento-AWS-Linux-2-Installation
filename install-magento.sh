@@ -5,7 +5,7 @@ DB_USER=root
 DB_PASSWORD=root
 DB_HOST=127.0.0.1
 
-mysql -e 'Create database magento2;' -h ${DB_HOST} -u ${DB_USER} -p'${DB_PASSWORD}'
+mysql -e 'Create database magento2;' -h ${DB_HOST} -u ${DB_USER} -p${DB_PASSWORD}
 
 cd /var/www/html/magento/bin/magento
 
