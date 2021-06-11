@@ -26,8 +26,8 @@ fi
 --base-url=http://${MAGE_DOMAIN}/ \
 --db-host=${DB_HOST} \
 --db-name=magento2 \
---db-user=root \
---db-password='root' \
+--db-user=${DB_USER} \
+--db-password=${DB_PASSWORD} \
 --admin-firstname=Magento \
 --admin-lastname=User \
 --admin-email=user@example.com \
