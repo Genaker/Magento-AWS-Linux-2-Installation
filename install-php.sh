@@ -78,6 +78,8 @@ bash ./install-libsodium.sh
 service php-fpm start
 systemctl enable php-fpm
 
+sudo chmod -R 775 /var/log/php-fpm/
+
 echo "PHP $PHP_VERSION is installed "
  
 # sudo pecl install mcrypt-1.0.2 -y
