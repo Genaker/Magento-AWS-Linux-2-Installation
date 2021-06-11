@@ -44,6 +44,8 @@ yes | /var/www/html/magento/bin/magento setup:config:set --session-save=redis --
 
 echo "http://$MAGE_DOMAIN"
 
+sudo service php-fpm restart
+
 #bin/magento sampledata:deploy
 #bin/magento setup:upgrade
 #bin/magento setup:di:compile
