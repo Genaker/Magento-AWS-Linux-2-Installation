@@ -42,6 +42,8 @@ enabled=1
 module_hotfixes=true
 END
   sudo yum -y install nginx
+  # Disable firewall on Oracle instance
+  sudo systemctl disable firewalld
 else
   echo "$LINUX_VERSION Linux is not supported"
   exit 1
