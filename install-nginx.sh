@@ -52,7 +52,7 @@ fi
 
 service nginx start
 systemctl enable nginx
-
+sudo chmod -R 775 /var/log/nginx/
 nginx -v
 
 echo "Install finished"
