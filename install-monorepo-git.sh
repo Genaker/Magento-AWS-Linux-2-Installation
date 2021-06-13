@@ -19,3 +19,5 @@ echo "php -d memory_limit=5028M /var/www/html/magento/bin/magento setup:install 
 echo "chmod -R 777 /var/www/html/magento/"
 
 echo "yes | /var/www/html/magento/bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=127.0.0.1 --page-cache-redis-db=1"
+
+sudo chmod -R 777 /var/www/html/magento/
