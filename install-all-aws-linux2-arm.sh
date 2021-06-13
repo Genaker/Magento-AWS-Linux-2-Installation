@@ -36,3 +36,7 @@ bash ./install-monorepo-git.sh
 echo "Configure Nginx \n"
 
 bash ./configure-nginx.sh
+
+echo "Test Software is running"
+
+bash ./test.sh
