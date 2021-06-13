@@ -43,3 +43,9 @@ fi
 sudo service docker start
 
 sudo systemctl enable docker
+
+sudo gpasswd -a "${USER}" docker
+
+source ~/.bashrc
+
+sudo chmod 777 /var/run/docker.sock
