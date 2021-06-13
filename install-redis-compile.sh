@@ -7,6 +7,15 @@ echo "Install Redis"
 yum install wget make -y 
 sudo yum install gcc -y
 
+exists()
+{
+  command -v "$1" >/dev/null 2>&1
+}
+
+if exists Redis; then
+  echo 'Redis  exists!'
+else
+
 wget http://download.redis.io/redis-stable.tar.gz 
 
 tar xvzf redis-stable.tar.gz
@@ -71,6 +80,8 @@ sudo systemctl start redis
 
 sudo service redis status --no-pager
 
+
+fi
 #   It is also possible to remove all the previously configured save
 #   points by adding a save directive with a single empty string argument
 #   like in the following example:
