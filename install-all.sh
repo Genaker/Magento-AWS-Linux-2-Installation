@@ -42,3 +42,7 @@ echo "Install Magento Monorepo \n"
 
 bash ./install-monorepo-git.sh
 #bash ./install-magento-composer.sh
+
+echo "Test Software is running"
+
+bash ./test.sh
