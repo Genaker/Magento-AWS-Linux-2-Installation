@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #remove default
-sed -i 's/80/8080/g'  /etc/nginx/nginx.conf
-sed -i 's/80/8080/g'  /etc/nginx/conf.d/default.conf
+sed -i 's/80/88/g'  /etc/nginx/nginx.conf
+sed -i 's/80/88/g'  /etc/nginx/conf.d/default.conf
 
 # Run when magento files are in place 
 
