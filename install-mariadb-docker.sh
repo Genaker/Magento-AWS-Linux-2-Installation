@@ -72,6 +72,8 @@ sudo yum install mysql -y
 
 # sudo docker exec -it magento bash
 
+sleep 5
+
 mysql -h 127.0.0.1 -u root -p'root' -e 'select Version();'
 
 # you can commit DB inside of docker my using new image 
