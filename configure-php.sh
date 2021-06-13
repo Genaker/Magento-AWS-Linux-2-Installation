@@ -59,6 +59,7 @@ sed -i 's/pm.max_children = 50/pm.max_children = 1000/' /etc/php-fpm.d/www.conf
 echo "/etc/php.ini loaded [ok]"
 
 sudo usermod -a -G apache ec2-user
+sudo su $USER
 
 sudo echo "net.core.somaxconn = 20000" >> /etc/sysctl.conf
 sudo echo "net.core.netdev_max_backlog = 65535" >> /etc/sysctl.conf
