@@ -9,7 +9,7 @@ docker images
 # ToDo: volume my.conf and db files
 # Official Documentatio https://hub.docker.com/_/mariadb
 
-sudo docker run --name redis -p 6379:6379 --restart unless-stopped -d redis:alpine3.13 --save ''
+sudo docker run --name redis -p 6379:6379 --restart unless-stopped -d redis:alpine3.13 --save '' --databases 10000
 
 # mysql-cli
 
