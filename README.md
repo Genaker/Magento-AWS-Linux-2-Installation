@@ -1,4 +1,9 @@
-# Magento Commerce Cloud to AWS Linux 2 (Centos 7) / Azure Centos 8.2 Installation migration tool with ARM Graviton2 instances support  
+# Magento Commerce Cloud to AWS Linux 2 (Centos 7) / Azure Centos 8.2/ Oracle Linux 8 Installation migration tool with ARM Graviton2 instances support  
+
+Fast Run (AWS Linux 2, Centos 8, Oracle Linux 8):
+```
+wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/heads/master.zip && unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ && sudo bash ./install-all.sh
+```
 
 If you have any questions or issues feel free to send me an email – yegorshytikov@gmail.com
 
