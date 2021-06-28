@@ -19,7 +19,7 @@ if exists Redis; then
   echo 'Redis  exists!'
 else
 
-wget http://download.redis.io/$REDIS_VERION.tar.gz 
+wget "http://download.redis.io/{$REDIS_VERSION}.tar.gz"
 
 tar xvzf redis-stable.tar.gz
 
