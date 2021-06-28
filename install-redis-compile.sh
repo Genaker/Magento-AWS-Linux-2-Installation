@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Tested Centos 8, AWS? ARM?
+# Tested Centos 8, AWS, ARM
 
 echo "Install Redis"
 
