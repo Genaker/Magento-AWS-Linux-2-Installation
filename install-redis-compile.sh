@@ -4,6 +4,9 @@
 
 echo "Install Redis"
 
+# You can cahnge version. List is here : https://download.redis.io/releases/
+REDIS_VERSION='redis-stable'
+
 yum install wget make -y 
 sudo yum install gcc -y
 
@@ -16,7 +19,7 @@ if exists Redis; then
   echo 'Redis  exists!'
 else
 
-wget http://download.redis.io/redis-stable.tar.gz 
+wget http://download.redis.io/$REDIS_VERION.tar.gz 
 
 tar xvzf redis-stable.tar.gz
 
