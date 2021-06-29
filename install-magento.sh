@@ -1,6 +1,7 @@
 #!/bin/bash
 
 MAGE_DOMAIN=$(curl ipinfo.io/ip)
+DB_NAME=magento2
 DB_USER=root
 DB_PASSWORD=root
 DB_HOST=127.0.0.1
@@ -25,7 +26,7 @@ fi
 /var/www/html/magento/bin/magento  setup:install \
 --base-url=http://${MAGE_DOMAIN}/ \
 --db-host=${DB_HOST} \
---db-name=magento2 \
+--db-name=${DB_NAME} \
 --db-user=${DB_USER} \
 --db-password=${DB_PASSWORD} \
 --admin-firstname=Magento \
