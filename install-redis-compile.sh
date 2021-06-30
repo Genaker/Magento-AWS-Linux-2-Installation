@@ -19,9 +19,9 @@ if exists Redis; then
   echo 'Redis  exists!'
 else
 
-wget "http://download.redis.io/{$REDIS_VERSION}.tar.gz"
+wget "http://download.redis.io/$REDIS_VERSION.tar.gz"
 
-tar xvzf redis-stable.tar.gz
+tar xvzf $REDIS_VERSION.tar.gz
 
 cd ./redis-stable/deps
 make hiredis jemalloc linenoise lua geohash-int
