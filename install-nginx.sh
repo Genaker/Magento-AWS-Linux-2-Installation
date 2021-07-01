@@ -10,6 +10,8 @@ LINUX_VERSION=$(cat /etc/system-release)
 
 echo $LINUX_VERSION
 
+sudo yum remove nginx
+
 if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
   echo "Install Uing Amazon Linux Extras"
