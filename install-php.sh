@@ -16,6 +16,7 @@ then
   sudo amazon-linux-extras enable php${PHP_VERSION}
   # to downgarede use disable command
   #sudo amazon-linux-extras disable php7.4 
+  # sudo yum remove php*
   # sudo yum autoremove php php-common
   sudo yes | sudo amazon-linux-extras install php${PHP_VERSION} 
   # sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap}
