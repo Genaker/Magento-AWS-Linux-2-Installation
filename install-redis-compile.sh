@@ -23,7 +23,7 @@ wget "http://download.redis.io/$REDIS_VERSION.tar.gz"
 
 tar xvzf $REDIS_VERSION.tar.gz
 
-cd ./redis-stable/deps
+cd ./$REDIS_VERSION/deps
 make hiredis jemalloc linenoise lua geohash-int
 cd ..
 make
@@ -35,7 +35,7 @@ cd ..
 
 pwd
 
-sudo cp ./redis-stable/redis.conf /etc/redis
+sudo cp ./$REDIS_VERSION/redis.conf /etc/redis
 
 sudo groupadd redis
 sudo adduser --system -g redis --no-create-home redis
