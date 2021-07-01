@@ -10,13 +10,16 @@ LINUX_VERSION=$(cat /etc/system-release)
 
 echo $LINUX_VERSION
 
+sudo yum remove php* -y
+
 if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
   sudo amazon-linux-extras enable php${PHP_VERSION}
+  sudo yum clean metadata
   # to downgarede use disable command
   #sudo amazon-linux-extras disable php7.4 
-  # sudo yum remove php*
+  # sudo yum remove php* -y
   # sudo yum autoremove php php-common
   sudo yes | sudo amazon-linux-extras install php${PHP_VERSION} 
   # sudo yum install php php-{pear,cgi,common,curl,mbstring,gd,mysqlnd,gettext,bcmath,json,xml,fpm,intl,zip,imap}
