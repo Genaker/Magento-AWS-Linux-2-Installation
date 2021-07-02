@@ -10,7 +10,7 @@ echo "Install PHP \n"
 
 bash ./install-php.sh
 bash ./configure-php.sh
-bash ./install-tideways-profiler.sh
+# bash ./install-tideways-profiler.sh
 
 set +e
 bash ./install-composer.sh
