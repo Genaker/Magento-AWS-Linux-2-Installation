@@ -3,7 +3,7 @@
 
 yum install -y epel-release oracle-epel-release-el8 --skip-broken 
 
-elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
+if echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
   
