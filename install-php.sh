@@ -58,9 +58,8 @@ then
 
  OS_RELATED="php-pear php74-php-pecl-mcrypt php74-php-pecl-redis "
   
- sudo pecl install redis
  sudo setenforce Permissive
-
+ 
 else
   echo "$LINUX_VERSION Linux is not supported"
   exit 1
@@ -70,6 +69,7 @@ fi
 sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel 
 
 sudo yum -y install $OS_RELATED
+
 ## downgrade php 
 #
 # yum remove php-cli mod_php php-common
