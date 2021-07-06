@@ -70,7 +70,10 @@ bash ./install-elastic-search.sh; \
 
 echo "Install Magento Monorepo \n"; \
 
-bash ./install-monorepo-git.sh; 
+mkdir -p /var/www/html/magento/; \
+
+echo "We are not instaling magento for now";
+#bash ./install-monorepo-git.sh; 
 #bash ./install-magento-composer.sh
 
 EXPOSE 80 443
