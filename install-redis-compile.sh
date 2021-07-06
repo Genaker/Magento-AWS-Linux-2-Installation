@@ -77,11 +77,13 @@ cd ..
 sed -i 's/# save ""/save ""/g'  /etc/redis/redis.conf
 
 #auto start Redis after searver reload 
+set +e
 sudo systemctl enable redis
 
 sudo systemctl start redis
 
 sudo service redis status --no-pager
+set -e
 
 
 fi
