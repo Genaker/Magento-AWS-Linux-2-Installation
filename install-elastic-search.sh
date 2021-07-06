@@ -33,4 +33,6 @@ systemctl restart elasticsearch.service
 
 echo "ES Cluster Name : magento | Node: magento-node1 | Port: 9200 \n"
 
+set +e
 curl localhost:9200/
+set -e
