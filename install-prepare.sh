@@ -10,4 +10,4 @@ then
 sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 fi
 
-yum install -y htop nano sudo git initscripts wget unzip mysql
+yum install -y htop nano sudo git initscripts wget unzip mysql --skip-broken
