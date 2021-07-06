@@ -25,7 +25,7 @@ cd ./Magento-AWS-Linux-2-Installation-master/ \
 
 echo "Installing Utilities \n" \
 
-bash ./install-prepare.sh \ \
+bash ./install-prepare.sh \ 
 
 echo "Install PHP \n" \
 
