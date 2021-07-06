@@ -20,6 +20,8 @@ wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/he
 unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ 
 
 RUN set -x \
+cd ~ \
+cd ./Magento-AWS-Linux-2-Installation-master/ \
 
 echo "Installing Utilities \n" \
 
