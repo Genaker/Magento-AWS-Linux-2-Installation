@@ -12,6 +12,8 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
 
+
+COPY ./install-prepare.sh .
 RUN ls && chmod +x ./install-prepare.sh && \
 bash ./install-prepare.sh
 
