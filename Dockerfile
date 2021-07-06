@@ -50,9 +50,9 @@ set -e; \
 
 echo "Install Redis \n"; \
 
-bash ./install-redis-compile.sh; \
+bash ./install-redis-compile.sh; 
 
-echo "Install MYSQL/MARIA DB \n"; \
+RUN echo "Install MYSQL/MARIA DB \n"; \
 
 bash ./install-mariadb-docker.sh; \
 
