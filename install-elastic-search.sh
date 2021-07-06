@@ -2,7 +2,7 @@
 
 yum -y install java
 
-ELKREPO="7.x"
+ELKREPO=${ELKREPO:="7.x"}
 
 #install Elastic Search
 
