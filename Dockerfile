@@ -14,8 +14,8 @@ VOLUME [ "/sys/fs/cgroup" ]
 
 
 COPY ./install-prepare.sh /scripts/
-RUN ls && chmod +x ./install-prepare.sh && \
-bash ./install-prepare.sh
+RUN ls && chmod +x /scripts/install-prepare.sh && \
+bash /scripts/install-prepare.sh
 
 
 EXPOSE 80 443
