@@ -29,6 +29,7 @@ sed -i "s/-Xms.*/-Xms512m/" /etc/elasticsearch/jvm.options
 sed -i "s/-Xmx.*/-Xmx512m/" /etc/elasticsearch/jvm.options
 chown -R :elasticsearch /etc/elasticsearch/*
 
+systemctl daemon-reload
 systemctl enable elasticsearch.service
 systemctl restart elasticsearch.service
 #/usr/share/elasticsearch/bin/elasticsearch-setup-passwords auto
