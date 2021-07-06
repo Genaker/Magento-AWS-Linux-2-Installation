@@ -1,16 +1,16 @@
 #!/bin/bash/
 # Repo is not working with ARM instances
-sudo tee /etc/yum.repos.d/MariaDB.repo<<EOF 
-[mariadb]
-name = MariaDB
-baseurl = http://yum.mariadb.org/10.4/centos8-amd64
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
-EOF
+wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+sudo chmod +x mariadb_repo_setup
 
-sudo dnf install boost-program-options -y
-sudo dnf install mariadb-server --disablerepo=AppStream -y
-sudo dnf install mariadb-client -y
-sudo systemctl enable --now mariadb
+sudo ./mariadb_repo_setup
 
-mysql -h 127.0.0.1 -u root -e 'Select Version()';
+sudo yum remove mysql* -y
+
+sudo yum install perl-DBI libaio libsepol lsof boost-program-options rsync -y
+
+sudo yum install MariaDB-server -y
+
+sudo systemctl start mariadb.service
+
+sudo systemctl enable mariadb.service
