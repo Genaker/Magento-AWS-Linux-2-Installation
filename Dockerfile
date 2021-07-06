@@ -28,50 +28,32 @@ RUN set -x; \
 cd ~; \
 cd ./Magento-AWS-Linux-2-Installation-master/; \
 ls; \
-
 echo "Installing Utilities \n"; \
-
 bash ./install-prepare.sh; \ 
-
 echo "Install PHP \n"; \
-
 bash ./install-php.sh; \
 bash ./configure-php.sh; \
 # bash ./install-tideways-profiler.sh
-
 set +e; \
 bash ./install-composer.sh; \
 set -e; \
-
 echo "Install NGINX \n"; \
-
 bash ./install-nginx.sh; \
-
 echo "Configure Nginx \n"; \
-
 set +e; \
 bash ./configure-nginx.sh; \
 set -e; \
-
 echo "Install Redis \n"; \
-
 bash ./install-redis-compile.sh; 
-
 RUN echo "Install MYSQL/MARIA DB \n"; \
 cd ~; \
 cd ./Magento-AWS-Linux-2-Installation-master/; \
 bash /usr/sbin/init; \
-
 bash ./install-mariadb-repo.sh; \
-
 echo "Install Elastic Search \n"; \
-
 bash ./install-elastic-search.sh; \
-
 echo "Install Magento Monorepo \n"; \
-
 mkdir -p /var/www/html/magento/; \
-
 echo "We are not instaling magento for now";
 #bash ./install-monorepo-git.sh; 
 #bash ./install-magento-composer.sh
