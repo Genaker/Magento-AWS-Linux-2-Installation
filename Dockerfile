@@ -62,7 +62,7 @@ cd ~; \
 cd ./Magento-AWS-Linux-2-Installation-master/; \
 bash /usr/sbin/init; \
 
-bash ./install-mariadb-docker.sh; \
+bash ./install-mariadb-repo.sh; \
 
 echo "Install Elastic Search \n"; \
 
