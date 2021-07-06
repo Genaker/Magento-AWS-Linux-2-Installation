@@ -12,14 +12,14 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
 
-
 COPY ./install-prepare.sh /scripts/
 RUN ls && chmod +x /scripts/install-prepare.sh && \
-bash /scripts/install-prepare.sh
-
+bash /scripts/install-prepare.sh $$ \
+wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/heads/master.zip && \
+unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ && \
+sudo bash ./install-all.sh
 
 EXPOSE 80 443
-
 
 # VOLUME ["/var/www/html/magento"]
 # VOLUME ["/var/www/html/magento/pub/media"]
