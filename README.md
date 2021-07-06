@@ -20,6 +20,28 @@ The LAMP bundle can be combined with many other free and open-source software pa
 
 # Why not Magento Docker Compose?
 
+**Update: docker support added!
+To build docekr Run**
+```
+docker build . -t my-docker-image --no-cache
+docker run --privileged --name magento2-container -dit  -v /sys/fs/cgroup:/sys/fs/cgroup:ro  -p 80:80 -p 443:443 -p 3306:3306  my-docker-image:latest /usr/sbin/init
+docker exec -it magento2-container bash
+
+#copy code to the container
+
+docker cp ./README.md magento2-canon:/var/www/html/magento/
+
+#install magento - insert your values 
+
+php -d memory_limit=5028M /var/www/html/magento/bin/magento setup:install --base-url=http://$IP --base-url-secure=http://$IP --use-secure=0 --use-rewrites=1 --use-secure-admin=1 --backend-frontname=admin --db-host=127.0.0.1 --db-name=magento --db-user=root --db-password=root --use-secure=0 --base-url-secure=0 --use-secure-admin=0 --admin-firstname=Admin --admin-lastname=Adminovich --admin-email=admin@admin.ua --admin-user=admin --backend-frontname=admin --use-rewrites=1 --admin-password=admin123
+
+# crete database and dump 
+
+mysql -h 127.0.0.1 -u root magento2 < ./magento-dump.sql.gz
+
+# or adjust env.php file
+```
+
 There are also times when Docker isn’t the best solution:
 
 1. Your Magento app is complicated and you are not/do not have a sysadmin. For large or complicated Magento applications, using a pre-made Dockerfile or pulling an existing image will not be sufficient. The building, editing, and managing communication between multiple containers on multiple servers is a time-consuming task.
