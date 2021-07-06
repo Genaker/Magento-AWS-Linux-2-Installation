@@ -12,4 +12,4 @@ sudo dnf install boost-program-options -y
 sudo dnf install MariaDB-server MariaDB-client --disablerepo=AppStream -y
 sudo systemctl enable --now mariadb
 
-mysql -u root -e 'Select Version()';
+mysql -h 127.0.0.1 -u root -e 'Select Version()';
