@@ -22,6 +22,7 @@ unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/
 RUN set -x \
 cd ~ \
 cd ./Magento-AWS-Linux-2-Installation-master/ \
+ls \
 
 echo "Installing Utilities \n" \
 
