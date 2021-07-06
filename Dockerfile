@@ -1,4 +1,5 @@
-FROM centos:8
+FROM centos:8 as centosd
+
 ENV container docker
 
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
@@ -11,6 +12,10 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
+
+CMD ["/usr/sbin/init"]
+
+FROM centosd
 
 COPY ./install-prepare.sh /scripts/
 RUN ls && chmod +x /scripts/install-prepare.sh && \
