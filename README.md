@@ -24,7 +24,7 @@ The LAMP bundle can be combined with many other free and open-source software pa
 To build docekr Run**
 ```
 docker build . -t my-docker-image --no-cache
-docker run --privileged --name magento2-container -dit  -v /sys/fs/cgroup:/sys/fs/cgroup:ro  -p 80:80 -p 443:443 -p 3306:3306  my-docker-image:latest /usr/sbin/init
+docker run --privileged --name magento2-container -dit  -v /sys/fs/cgroup:/sys/fs/cgroup:ro  -p 80:80 -p 443:443 -p 3306:3306  my-docker-image:latest 
 docker exec -it magento2-container bash
 
 #copy code to the container
