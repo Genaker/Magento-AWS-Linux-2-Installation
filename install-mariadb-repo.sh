@@ -9,7 +9,8 @@ gpgcheck=1
 EOF
 
 sudo dnf install boost-program-options -y
-sudo dnf install MariaDB-server MariaDB-client --disablerepo=AppStream -y
+sudo dnf install mariadb-server --disablerepo=AppStream -y
+sudo dnf install mariadb-client -y
 sudo systemctl enable --now mariadb
 
 mysql -h 127.0.0.1 -u root -e 'Select Version()';
