@@ -54,6 +54,8 @@ bash ./install-redis-compile.sh;
 
 RUN echo "Install MYSQL/MARIA DB \n"; \
 
+bash /usr/sbin/init; \
+
 bash ./install-mariadb-docker.sh; \
 
 echo "Install Elastic Search \n"; \
@@ -62,7 +64,7 @@ bash ./install-elastic-search.sh; \
 
 echo "Install Magento Monorepo \n"; \
 
-bash ./install-monorepo-git.sh; \
+bash ./install-monorepo-git.sh; 
 #bash ./install-magento-composer.sh
 
 EXPOSE 80 443
