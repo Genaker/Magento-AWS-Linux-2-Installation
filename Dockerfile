@@ -23,7 +23,7 @@ RUN set -x \
 
 echo "Installing Utilities \n" \
 
-bash ./install-prepare.sh \/
+bash ./install-prepare.sh \ \
 
 echo "Install PHP \n" \
 
