@@ -58,7 +58,8 @@ echo "Install Redis \n"; \
 bash ./install-redis-compile.sh; 
 
 RUN echo "Install MYSQL/MARIA DB \n"; \
-
+cd ~ \
+cd ./Magento-AWS-Linux-2-Installation-master/; \
 bash /usr/sbin/init; \
 
 bash ./install-mariadb-docker.sh; \
