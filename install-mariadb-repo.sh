@@ -1,9 +1,11 @@
 #!/bin/bash/
 # Repo is not working with ARM instances
-#wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
-#sudo chmod +x mariadb_repo_setup
+wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+sudo chmod +x mariadb_repo_setup
 
-#sudo ./mariadb_repo_setup
+sudo ./mariadb_repo_setup
+rm /etc/yum.repos.d/mariadb.repo
+
 cat > /etc/yum.repos.d/mariadb.repo << EOF
 [mariadb-main]
 name = MariaDB Server
