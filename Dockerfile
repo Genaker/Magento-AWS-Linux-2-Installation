@@ -22,7 +22,8 @@ RUN ls && chmod +x /scripts/install-prepare.sh && \
 bash /scripts/install-prepare.sh && \
 cd ~ && \
 wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/heads/master.zip && \
-unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ 
+unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ && yum clean all && \
+rm -rf /var/cache/yum
 
 RUN set -x; \
 cd ~; \
@@ -54,7 +55,9 @@ echo "Install Elastic Search \n"; \
 bash ./install-elastic-search.sh; \
 echo "Install Magento Monorepo \n"; \
 mkdir -p /var/www/html/magento/; \
-echo "We are not instaling magento for now";
+echo "We are not instaling magento for now"; \
+yum clean all && \
+rm -rf /var/cache/yum;
 #bash ./install-monorepo-git.sh; 
 #bash ./install-magento-composer.sh
 
