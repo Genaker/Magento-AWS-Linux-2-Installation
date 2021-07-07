@@ -62,7 +62,7 @@ rm -rf /var/cache/yum; \
 IP=127.0.0.1; \
 bash ./install-magento-git.sh
 ENV DOCKER=YES
-EXPOSE 80 443
+EXPOSE 80 443 3306
 
 # VOLUME ["/var/www/html/magento"]
 # VOLUME ["/var/www/html/magento/pub/media"]
