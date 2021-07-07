@@ -22,6 +22,7 @@ else
 wget "http://download.redis.io/$REDIS_VERSION.tar.gz"
 
 tar xvzf $REDIS_VERSION.tar.gz
+rm  $REDIS_VERSION.tar.gz
 
 cd ./$REDIS_VERSION/deps
 make hiredis jemalloc linenoise lua geohash-int
@@ -83,10 +84,13 @@ sudo systemctl enable redis
 sudo systemctl start redis
 
 sudo service redis status --no-pager
+
+rm -rf ./$REDIS_VERSION
 set -e
 
 
 fi
+
 #   It is also possible to remove all the previously configured save
 #   points by adding a save directive with a single empty string argument
 #   like in the following example:
