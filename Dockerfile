@@ -46,7 +46,7 @@ bash ./install-nginx.sh; \
 echo "Configure Nginx \n"; \
 set +e; \
 bash ./configure-nginx.sh; \
-set -e; \
+set -e; 
 RUN echo "Install MYSQL/MARIA DB \n"; \
 cd ~; \
 cd ./Magento-AWS-Linux-2-Installation-master/; \
