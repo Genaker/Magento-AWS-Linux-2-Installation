@@ -60,7 +60,6 @@ yum clean all && \
 rm -rf /var/cache/yum; \
 #bash ./install-monorepo-git.sh; 
 IP=127.0.0.1; \
-MYSQL_DB_PASS=''; \
 bash ./install-magento-git.sh
 ENV DOCKER=YES
 EXPOSE 80 443
