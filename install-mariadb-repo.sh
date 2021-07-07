@@ -30,8 +30,6 @@ gpgcheck = 1
 enabled = 1
 EOF
 
-sed -i 's/80/88/g'  /etc/nginx/nginx.conf
-
 sudo yum remove mysql* -y
 
 sudo yum install perl-DBI libaio libsepol lsof boost-program-options rsync -y
