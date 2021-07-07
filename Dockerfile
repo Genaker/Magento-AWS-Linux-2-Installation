@@ -59,7 +59,7 @@ echo "We are not instaling magento for now"; \
 yum clean all && \
 rm -rf /var/cache/yum;
 #bash ./install-monorepo-git.sh; 
-#bash ./install-magento-composer.sh
+bash ./install-magento-composer.sh
 
 EXPOSE 80 443
 
