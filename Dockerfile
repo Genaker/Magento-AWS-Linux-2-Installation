@@ -57,9 +57,11 @@ echo "Install Magento Monorepo \n"; \
 mkdir -p /var/www/html/magento/; \
 echo "We are not instaling magento for now"; \
 yum clean all && \
-rm -rf /var/cache/yum;
+rm -rf /var/cache/yum; \
 #bash ./install-monorepo-git.sh; 
-bash ./install-magento-composer.sh
+IP=127.0.0.1; \
+MYSQL_DB_PASS=''; \
+bash ./install-magento-git.sh
 
 EXPOSE 80 443
 
