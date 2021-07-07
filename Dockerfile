@@ -59,7 +59,7 @@ echo "We are not instaling magento for now"; \
 yum clean all && \
 rm -rf /var/cache/yum; \
 #bash ./install-monorepo-git.sh; 
-IP=127.0.0.1; \
+export IP=127.0.0.1; \
 bash ./install-magento-git.sh
 ENV DOCKER=YES
 EXPOSE 80 443 3306 6379
