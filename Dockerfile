@@ -19,10 +19,13 @@ FROM centosd
 
 COPY ./install-prepare.sh /scripts/
 RUN ls && chmod +x /scripts/install-prepare.sh && \
-bash /scripts/install-prepare.sh && \
+bash /scripts/install-prepare.sh; \
 cd ~ && \
 wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/heads/master.zip && \
-unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ && yum clean all && \
+unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ \
+echo "Install Redis \n"; \
+bash ./install-redis-compile.sh; && \
+yum clean all && \
 rm -rf /var/cache/yum
 
 RUN set -x; \
@@ -44,8 +47,6 @@ echo "Configure Nginx \n"; \
 set +e; \
 bash ./configure-nginx.sh; \
 set -e; \
-echo "Install Redis \n"; \
-bash ./install-redis-compile.sh; 
 RUN echo "Install MYSQL/MARIA DB \n"; \
 cd ~; \
 cd ./Magento-AWS-Linux-2-Installation-master/; \
