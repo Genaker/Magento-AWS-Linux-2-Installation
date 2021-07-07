@@ -10,11 +10,23 @@ composer install
 
 echo "\nRun: "bin/magento  setup:install" to finish installation\n"
 
-mysql -h 127.0.0.1 -u root  -p'root' -e 'create database magento';
+
+if [ -f /.dockerenv ]; then
+    echo "I'm inside Docker";
+    mysql -e"set password for 'root'@'localhost' = password('root')"
+    mysql -e"flush privileges"
+else
+    echo "It is Not Docker";
+fi
 
 IP_REAL=$(wget -qO - icanhazip.com)
-IP=${IP:=IP_REAL}
+IP=${IP:=$IP_REAL}
 MYSQL_DB_PASS=${MYSQL_DB_PASS:=root}
+
+echo $IP
+echo $MYSQL_DB_PASS
+
+mysql -h 127.0.0.1 -u root  -p"$MYSQL_DB_PASS" -e 'create database magento';
 
 sudo service nginx restart
 
