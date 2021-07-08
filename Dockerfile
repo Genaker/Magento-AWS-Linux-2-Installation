@@ -22,7 +22,7 @@ RUN ls && chmod +x /scripts/install-prepare.sh && \
 bash /scripts/install-prepare.sh; \
 cd ~ && \
 wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/heads/master.zip && \
-unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ \
+unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/; \
 echo "Install Redis \n"; \
 bash ./install-redis-compile.sh ; \
 yum clean all && \
