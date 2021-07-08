@@ -40,6 +40,7 @@ bash ./configure-php.sh; \
 # bash ./install-tideways-profiler.sh
 set +e; \
 bash ./install-composer.sh; \
+composer clear-cache; \
 set -e; \
 echo "Install NGINX \n"; \
 bash ./install-nginx.sh; \
