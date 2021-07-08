@@ -14,7 +14,7 @@ echo "\nRun: "bin/magento  setup:install" to finish installation\n"
 
 if [ -f /.dockerenv ]; then
     echo "I'm inside Docker";
-    su - mysql -c"mysqld --user=root" &>/dev/null &
+    mysqld --user=mysql &>/dev/null &
     adduser test
     usermod -a -G elasticsearch test
     chmod -R 777 /var/log/ /var/lib/elasticsearch/
