@@ -10,7 +10,6 @@ composer install
 
 echo "\nRun: "bin/magento  setup:install" to finish installation\n"
 
-
 if [ -f /.dockerenv ]; then
     echo "I'm inside Docker";
     su - mysql -c"mysqld --user=root" &>/dev/null &
