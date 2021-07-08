@@ -54,14 +54,16 @@ bash /usr/sbin/init; \
 bash ./install-mariadb-repo.sh; \
 echo "Install Elastic Search \n"; \
 bash ./install-elastic-search.sh; \
-echo "Install Magento Monorepo \n"; \
+echo "Install Magento Git \n"; \
 mkdir -p /var/www/html/magento/; \
 echo "We are not instaling magento for now"; \
 yum clean all && \
 rm -rf /var/cache/yum; \
 #bash ./install-monorepo-git.sh; 
 export IP=127.0.0.1; \
-bash ./install-magento-git.sh
+set +e; \
+bash ./install-magento-git.sh; \
+set -e; 
 ENV DOCKER=YES
 EXPOSE 80 443 3306 6379
 
