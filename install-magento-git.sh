@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 mkdir -p /var/www/html/magento/
 
 cd /var/www/html/magento/
@@ -43,4 +45,4 @@ echo "yes | /var/www/html/magento/bin/magento setup:config:set --page-cache=redi
 
 sudo chmod -R 777 /var/www/html/magento/
 
-pkill mysql
+pkill mysql || true
