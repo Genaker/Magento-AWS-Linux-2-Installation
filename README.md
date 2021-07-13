@@ -21,7 +21,7 @@ The LAMP bundle can be combined with many other free and open-source software pa
 # Why not Magento Docker Compose?
 
 **Update: docker support added!
-To build docekr Run**
+To build Docker Run**
 ```
 docker build . -t my-docker-image --no-cache
 docker run --privileged --name magento2-container -dit  -v /sys/fs/cgroup:/sys/fs/cgroup:ro  -p 80:80 -p 443:443 -p 3306:3306  my-docker-image:latest 
