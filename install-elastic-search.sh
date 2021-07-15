@@ -27,7 +27,7 @@ sed -i "s/.*node.name.*/node.name: magento-node1/" /etc/elasticsearch/elasticsea
 sed -i "s/.*network.host.*/network.host: 127.0.0.1/" /etc/elasticsearch/elasticsearch.yml
 sed -i "s/.*http.port.*/http.port: 9200/" /etc/elasticsearch/elasticsearch.yml
 sed -i "s/.*-Xms.*/-Xms888m/" /etc/elasticsearch/jvm.options
-sed -i "s/.*-Xms.*/-Xms888m/" /etc/elasticsearch/jvm.options
+sed -i "s/.*-Xmx.*/-Xmx888m/" /etc/elasticsearch/jvm.options
 chown -R :elasticsearch /etc/elasticsearch/*
 
 systemctl daemon-reload
