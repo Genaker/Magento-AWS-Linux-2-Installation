@@ -987,8 +987,13 @@ class Zend_Locale_Data
 
         $id = self::_filterCacheId('Zend_LocaleC_' . $locale . '_' . $path . '_' . $val);
 
+	$apcuEnabled = false;
+	if (function_exists('apcu_fetch')) {
+            $apcuEnabled = true;
+        }
 	$apcuData = false;
 	if (!isset(self::$localCache[$id])) {
+		if ($apcuEnabled)
         	$apcuData = apcu_fetch($id);
 	} else {
 		return self::$localCache[$id];
@@ -999,6 +1004,7 @@ class Zend_Locale_Data
 	}
 
  	if (!self::$_cacheDisabled && ($result = self::$_cache->load($id))) {
+	   if ($apcuEnabled)
 	   apcu_store($id, $result, 3600);
 	   $return = unserialize($result);
 	   self::$localCache[$id] = $return;
