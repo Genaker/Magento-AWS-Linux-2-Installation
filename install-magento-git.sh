@@ -20,7 +20,7 @@ if [ -f /.dockerenv ]; then
     chmod -R 777 /var/log/ /var/lib/elasticsearch/
     su - test -c"/usr/share/elasticsearch/bin/elasticsearch -d"
     sleep 3
-    mysql -e"set password for 'root'@'localhost' = password('root')"
+    mysql -e"set password for 'root'@'localhost' = password('fsdhsgjh44234sfsdfSDFsdg23423')"
     mysql -e"flush privileges"
 else
     echo "It is Not Docker";
@@ -28,7 +28,7 @@ fi
 
 IP_REAL=$(wget -qO - icanhazip.com)
 IP=${IP:=$IP_REAL}
-MYSQL_DB_PASS=${MYSQL_DB_PASS:=root}
+MYSQL_DB_PASS=${MYSQL_DB_PASS:=fsdhsgjh44234sfsdfSDFsdg23423}
 
 echo $IP
 echo $MYSQL_DB_PASS
