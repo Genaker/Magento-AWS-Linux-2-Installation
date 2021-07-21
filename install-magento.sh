@@ -47,6 +47,7 @@ echo "http://$MAGE_DOMAIN"
 
 sudo service php-fpm restart
 sudo nginx -t
+setenforce 0
 sudo service nginx restart
 
 #bin/magento sampledata:deploy
