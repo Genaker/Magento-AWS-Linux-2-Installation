@@ -3,7 +3,7 @@
 MAGE_DOMAIN=$(curl ipinfo.io/ip)
 DB_NAME=magento2
 DB_USER=root
-DB_PASSWORD=root
+DB_PASSWORD=asdfDFhdjtDFGeq4rwrc3IOcvxb4xbfsdf
 DB_HOST=127.0.0.1
 
 mysql -e 'Create database magento2;' -h ${DB_HOST} -u ${DB_USER} -p${DB_PASSWORD}
@@ -34,6 +34,7 @@ fi
 --admin-email=user@example.com \
 --admin-user=admin \
 --admin-password=admin123 \
+--backend-frontname=cloud-admin \
 --language=en_US \
 --currency=USD \
 --timezone=America/Chicago \
