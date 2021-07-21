@@ -1,11 +1,11 @@
 #!/bin/bash
+set -x
 
 sudo bash ./install-docker-service.sh
 
 docker pull mariadb
 
 docker images
-
 
 # ToDo: volume my.conf and db files
 # Official Documentatio https://hub.docker.com/_/mariadb
