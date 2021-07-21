@@ -3,6 +3,10 @@
 Fast Run (AWS Linux 2, Centos 8, Oracle Linux 8):
 ```
 wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/heads/master.zip && unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ && sudo bash ./install-all.sh
+
+#Some Linuxes require wget
+sudo yum install wget -y
+
 ```
 
 If you have any questions or issues feel free to send me an email – yegorshytikov@gmail.com
