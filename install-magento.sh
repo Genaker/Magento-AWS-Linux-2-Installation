@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 MAGE_DOMAIN=$(curl ipinfo.io/ip)
 DB_NAME=magento2
@@ -8,14 +9,14 @@ DB_HOST=127.0.0.1
 
 mysql -e 'Create database magento2;' -h ${DB_HOST} -u ${DB_USER} -p${DB_PASSWORD}
 
-cd /var/www/html/magento/bin/magento
+cd /var/www/html/magento/
 
 MAGENTO_VERSION=$(bin/magento --version)
 ELASTIC_INSTALL=""
 
 if [[ "$MAGENTO_VERSION" == *"2.4"* ]]; then
   echo "With Elastic Search"
-  ELASTIC_INSTALL=" --search-engine=elasticsearch7 \ 
+  ELASTIC_INSTALL=" --search-engine=elasticsearch7 \
 --elasticsearch-host=localhost \
 --elasticsearch-port=9200"
 fi
