@@ -983,32 +983,34 @@ class Zend_Locale_Data
         if (is_array($value)) {
             $val = implode('_' , $value);
         }
-        $val = urlencode($val);
+        
+	$val = urlencode($val);
+        $id  = self::_filterCacheId('Zend_LocaleC_' . $locale . '_' . $path . '_' . $val);       
 
-        $id = self::_filterCacheId('Zend_LocaleC_' . $locale . '_' . $path . '_' . $val);
-
-	$apcuEnabled = false;
-	if (function_exists('apcu_fetch')) {
+        $apcuEnabled = false;
+        if (function_exists('apcu_fetch')) {
             $apcuEnabled = true;
         }
-	$apcuData = false;
-	if (!isset(self::$localCache[$id])) {
-		if ($apcuEnabled)
-        	$apcuData = apcu_fetch($id);
-	} else {
-		return self::$localCache[$id];
-	}
+
+        $apcuData = false;
+        if (isset(self::$localCache[$id])) {
+                //echo "<!-- Local Cache -->";
+                return self::$localCache[$id];
+        }
+        if ($apcuEnabled)
+        $apcuData = apcu_fetch($id);
+
         if ($apcuData !== false) {
                 $result = $apcuData;
-        	return unserialize($result);
-	}
+                return unserialize($result);
+        }
 
- 	if (!self::$_cacheDisabled && ($result = self::$_cache->load($id))) {
-	   if ($apcuEnabled)
-	   apcu_store($id, $result, 3600);
-	   $return = unserialize($result);
-	   self::$localCache[$id] = $return;
-	   return $return;
+        if (!self::$_cacheDisabled && ($result = self::$_cache->load($id))) {
+           if ($apcuEnabled)
+           apcu_store($id, $result, 3600);
+           $return = unserialize($result);
+           self::$localCache[$id] = $return;
+           return $return;
         }
 
         switch(strtolower($path)) {
