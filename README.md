@@ -42,7 +42,7 @@ docker exec -it magento2-container bash
 
 #copy code to the container
 
-docker cp ./README.md magento2-canon:/var/www/html/magento/
+docker cp ./README.md magento2-container:/var/www/html/magento/
 
 #install magento - insert your values 
 
@@ -116,7 +116,7 @@ nano /etc/redis/redis.conf
 
 /var/www/html/magento - root dirrectory
 
-## Configure Nginx with MAgento 
+## Configure Nginx with Magento 
 
 Finally, configure Nginx site configuration file for Magento. This file will control how users access Magento content. Run the commands below to create a new configuration file called example.com.
 
