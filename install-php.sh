@@ -42,6 +42,7 @@ elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
   #yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y 
+  ## ARM instances has issues with remi repo
   yum install config-manager -y
   #yum config-manager --set-enabled remi
   sudo yum module list php
