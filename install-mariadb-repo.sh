@@ -57,7 +57,7 @@ sudo systemctl enable mariadb.service
 ## Oracle HAS OWN MYSQL not MARIADB repo with ARM support 
 
 elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
-than
+then
 echo "Installing MySQL 8 and not MariaDB"
 sudo yum install mysql -y
 MYSQL_PASSWORD='MyNewSecurePasswordI#Changed1234'
