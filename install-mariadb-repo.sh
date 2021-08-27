@@ -1,5 +1,8 @@
 #!/bin/bash/
 # Repo is not working with ARM instances
+LINUX_VERSION=$(cat /etc/system-release)
+
+echo $LINUX_VERSION
 
 if echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
