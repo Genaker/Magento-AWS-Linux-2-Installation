@@ -57,6 +57,15 @@ elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
 than
 echo "Installing MySQL 8 and not MariaDB"
 sudo yum install mysql -y
+MYSQL_PASSWORD='MyNewSecurePasswordI#Changed1234'
+//https://www.tecmint.com/reset-root-password-in-mysql-8/
+sudo service mysqld stop
+sudo pkill mysql
+sudo  mysqld --skip-grant-tables --user=mysql &
+mysql -u root -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD'"
+sudo pkill mysql
 sudo service mysqld start
 sudo systemctl enable mysqld
+mysql -u root -p'$MYSQL_PASSWORD' -e 'select VERSION();'
+
 fi
