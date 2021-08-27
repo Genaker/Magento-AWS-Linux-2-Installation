@@ -68,4 +68,7 @@ sudo service mysqld start
 sudo systemctl enable mysqld
 mysql -u root -p'$MYSQL_PASSWORD' -e 'select VERSION();'
 
+else
+  echo "$LINUX_VERSION Linux is not supported"
+  exit 1
 fi
