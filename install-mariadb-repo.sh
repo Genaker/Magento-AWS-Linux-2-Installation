@@ -65,11 +65,12 @@ MYSQL_PASSWORD='MyNewSecurePasswordI#Changed1234'
 sudo service mysqld stop
 sudo pkill mysql
 sudo  mysqld --skip-grant-tables --user=mysql &
-mysql -u root -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD'"
+sleep 10
+mysql -h 127.0.0.1 -u root -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD'"
 sudo pkill mysql
 sudo service mysqld start
 sudo systemctl enable mysqld
-mysql -u root -p'$MYSQL_PASSWORD' -e 'select VERSION();'
+mysql -h 127.0.0.1 -u root -p'$MYSQL_PASSWORD' -e 'select VERSION();'
 
 else
   echo "$LINUX_VERSION Linux is not supported"
