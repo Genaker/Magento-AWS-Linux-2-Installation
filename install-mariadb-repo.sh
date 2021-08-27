@@ -59,6 +59,7 @@ sudo systemctl enable mariadb.service
 elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
 then
 echo "Installing MySQL 8 and not MariaDB"
+sudo yum remove mysql* -y
 sudo yum install mysql-server -y
 MYSQL_PASSWORD='MyNewSecurePasswordI#Changed1234'
 #https://www.tecmint.com/reset-root-password-in-mysql-8/
