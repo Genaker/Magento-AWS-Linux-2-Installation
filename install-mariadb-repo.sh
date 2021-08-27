@@ -61,7 +61,7 @@ then
 echo "Installing MySQL 8 and not MariaDB"
 sudo yum install mysql -y
 MYSQL_PASSWORD='MyNewSecurePasswordI#Changed1234'
-//https://www.tecmint.com/reset-root-password-in-mysql-8/
+#https://www.tecmint.com/reset-root-password-in-mysql-8/
 sudo service mysqld stop
 sudo pkill mysql
 sudo  mysqld --skip-grant-tables --user=mysql &
