@@ -67,7 +67,7 @@ sudo pkill mysql
 mysql
 sudo  mysqld --skip-grant-tables --user=mysql &
 sleep 5
-mysql -h 127.0.0.1 -u root -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD'"
+mysql -h localhost -u root -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD'"
 sudo pkill mysqld
 sudo service mysqld start
 sudo systemctl enable mysqld
