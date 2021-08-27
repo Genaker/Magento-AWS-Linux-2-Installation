@@ -64,8 +64,9 @@ MYSQL_PASSWORD='MyNewSecurePasswordI#Changed1234'
 #https://www.tecmint.com/reset-root-password-in-mysql-8/
 sudo service mysqld stop
 sudo pkill mysql
+mysql
 sudo  mysqld --skip-grant-tables --user=mysql &
-sleep 10
+sleep 5
 mysql -h 127.0.0.1 -u root -e "FLUSH PRIVILEGES;ALTER USER 'root'@'localhost' IDENTIFIED BY '$MYSQL_PASSWORD'"
 sudo pkill mysqld
 sudo service mysqld start
