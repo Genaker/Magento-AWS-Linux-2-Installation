@@ -9,7 +9,7 @@ yum install cmake make openscap-utils python3-pyyaml python3-jinja2 libarchive l
 
 cmake . -DBUILD_CONFIG=mysql_release -DPLUGIN_AUTH_PAM=NO  -DPLUGIN_AUTH_PAM_V1=NO
 
-make -j 4
+make 
 sudo make install
 
 sudo useradd -r mysql
@@ -20,6 +20,7 @@ sudo /usr/local/mysql/scripts/mysql_install_db --user=mysql --datadir=/usr/local
 
 PATH=$PATH:/usr/local/mysql/bin
 
+// http://www.mysqlab.net/knowledge/kb/detail/topic/installation/id/4923
 sudo /usr/local/mysql/bin/mysqld_safe --datadir='/usr/local/mysql/data' &
 
 
