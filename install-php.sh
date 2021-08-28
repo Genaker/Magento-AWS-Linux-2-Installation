@@ -51,7 +51,7 @@ then
   #yum module reset php -y
   #yum -y module enable php:remi-$PHP_VERSION
 
-  OS_RELATED=" php74-php-pecl-mcrypt php74-php-pecl-redis "
+  OS_RELATED=" php74-php-pecl-mcrypt php74-php-pecl-redis  "
 
 
 elif echo $LINUX_VERSION | grep -q "Oracle Linux Server release 8"
@@ -62,7 +62,7 @@ then
 
  sudo dnf module enable php:7.4 -y
 
- OS_RELATED="php-pear php74-php-pecl-mcrypt php74-php-pecl-redis "
+ OS_RELATED=" php-pear php74-php-pecl-mcrypt php74-php-pecl-redis "
   
  sudo setenforce Permissive
  
@@ -75,6 +75,15 @@ fi
 sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel 
 
 sudo yum -y install $OS_RELATED
+
+sudo yum install libzip-devel -y
+sudo yum install libzstd-devel
+sudo pecl install libsodium
+sudo pecl install igbinary
+echo "extension=igbinary.so" | sudo tee /etc/php.d/10-igbin.ini
+echo "extension=redis.so" | sudo tee /etc/php.d/50-redis.ini
+echo "extension=sodium.so" | sudo tee /etc/php.d/20-sodium.ini
+yes | sudo pecl install redis 
 
 ## downgrade php 
 #
