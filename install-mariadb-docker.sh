@@ -10,7 +10,9 @@ docker images
 # ToDo: volume my.conf and db files
 # Official Documentatio https://hub.docker.com/_/mariadb
 
-sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=asdfDFhdjtDFGeq4rwrc3IOcvxb4xbfsdf --restart unless-stopped -d mariadb:10.4 
+DB_PASSWRD=asdfDFhdjtDFGeq4rwrc3IOcvxb4xbfsdf
+
+sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=$DB_PASSWRD --restart unless-stopped -d mariadb:10.4 
 
 # mysql-cli
 
