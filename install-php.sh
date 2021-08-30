@@ -74,6 +74,8 @@ fi
 
 sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel 
 
+sudo yum install php-pear -y
+
 sudo yum -y install $OS_RELATED
 
 sudo yum install libzip-devel -y
