@@ -35,7 +35,7 @@ fi
 --admin-email=user@example.com \
 --admin-user=admin \
 --admin-password=admin123 \
---backend-frontname=cloud-admin \
+--backend-frontname=cloud_admin \
 --language=en_US \
 --currency=USD \
 --timezone=America/Chicago \
