@@ -10,6 +10,12 @@ sudo yum install wget unzip -y
 sudo yum install wget unzip -y && wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/heads/master.zip && unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/ && sudo bash ./install-all.sh
 
 ```
+or short form using **install script**:
+```
+wget https://raw.githubusercontent.com/Genaker/Magento-AWS-Linux-2-Installation/master/install-script.sh
+sudo bash ./install-script.sh
+```
+
 # To Change Domain 
 Point DNS to IP or Load Blancer and:
 
