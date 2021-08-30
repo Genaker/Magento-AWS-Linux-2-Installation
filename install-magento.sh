@@ -10,6 +10,7 @@ DB_HOST=127.0.0.1
 mysql -e 'Create database magento2;' -h ${DB_HOST} -u ${DB_USER} -p${DB_PASSWORD}
 
 cd /var/www/html/magento/
+sudo chmod -R 777 /var/www/html/magento/generated/ /var/www/html/magento/var/
 
 MAGENTO_VERSION=$(bin/magento --version)
 ELASTIC_INSTALL=""
