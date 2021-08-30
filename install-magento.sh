@@ -53,6 +53,8 @@ sudo nginx -t
 setenforce 0
 sudo service nginx restart
 
+sudo chmod -R 777 /var/www/html/magento/generated/ /var/www/html/magento/var/
+
 #bin/magento sampledata:deploy
 #bin/magento setup:upgrade
 #bin/magento setup:di:compile
