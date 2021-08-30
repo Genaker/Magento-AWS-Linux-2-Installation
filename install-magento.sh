@@ -4,7 +4,7 @@ set -x
 MAGE_DOMAIN=$(curl ipinfo.io/ip)
 DB_NAME=magento2
 DB_USER=root
-DB_PASSWORD=asdfDFhdjtDFGeq4rwrc3IOcvxb4xbfsdf
+DB_PASSWORD="${DB_PASSWORD:=asdfDFhdjtDFGeq4rwrc3IOcvxb4xbfsdf}"  # If variable not set or null, set it to default.
 DB_HOST=127.0.0.1
 
 mysql -e 'Create database magento2;' -h ${DB_HOST} -u ${DB_USER} -p${DB_PASSWORD}
