@@ -77,9 +77,9 @@ sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-so
 sudo yum -y install $OS_RELATED
 
 sudo yum install libzip-devel -y
-sudo yum install libzstd-devel
-sudo pecl install libsodium
-sudo pecl install igbinary
+sudo yum install libzstd-devel -y
+yes | sudo pecl install libsodium 
+yes | sudo pecl install igbinary 
 echo "extension=igbinary.so" | sudo tee /etc/php.d/10-igbin.ini
 echo "extension=redis.so" | sudo tee /etc/php.d/50-redis.ini
 echo "extension=sodium.so" | sudo tee /etc/php.d/20-sodium.ini
