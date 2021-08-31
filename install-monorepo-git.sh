@@ -11,7 +11,7 @@ echo "\nRun: "bin/magento  setup:install" to finish installation\n"
 DB_PASSWORD="${DB_PASSWORD:=asdfDFhdjtDFGeq4rwrc3IOcvxb4xbfsdf}"
 DB_NAME="${DB_NAME:=magento2}"
 
-mysql -h 127.0.0.1 -u root  -p"$DB_PASSWORD" -e 'create database $DB_NAME';
+mysql -h 127.0.0.1 -u root  -p"$DB_PASSWORD" -e "create database $DB_NAME";
 
 IP=$(wget -qO - icanhazip.com)
 
