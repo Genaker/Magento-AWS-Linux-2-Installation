@@ -2,7 +2,7 @@ version: '3.3'
 services:
   magento:
     network_mode: host
-    image: registry.digitalocean.com/saas/magento-saas:latest
+    image:
     container_name: magento
     privileged: true
     command: --innodb-doublewrite=0 --innodb-large-prefix=1
