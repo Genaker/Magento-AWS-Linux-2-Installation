@@ -101,6 +101,7 @@ yes | sudo pecl install redis
 
 bash ./install-libsodium.sh
 
+sudo yum install php-fpm -y
 service php-fpm start
 systemctl enable php-fpm
 
