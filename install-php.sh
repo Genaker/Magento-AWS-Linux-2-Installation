@@ -79,6 +79,7 @@ sudo yum install php-pear -y
 
 sudo yum -y install $OS_RELATED
 
+sudo yum install libsodium libsodium-devel -y
 sudo yum install libzip-devel -y
 sudo yum install libzstd-devel -y
 yes | sudo pecl install libsodium 
