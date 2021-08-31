@@ -160,3 +160,11 @@ server {
 }
 ```
 Save the file and exit.
+
+
+# Logs
+
+ **PHP-FPM:** tail -f /var/log/php-fpm/www-error.log
+ **NGINX:** tail -f /var/log/nginx/error.log || tail -f /var/log/nginx/access.log
+ **Magento** tail -f /var/www/html/magento/var/log
+ 
