@@ -50,7 +50,7 @@ then
   sudo yum module enable php:$PHP_VERSION
   #yum module reset php -y
   #yum -y module enable php:remi-$PHP_VERSION
-
+  sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
   OS_RELATED=" php74-php-pecl-mcrypt php74-php-pecl-redis  "
 
 
@@ -61,7 +61,8 @@ then
  yum module reset php -y
 
  sudo dnf module enable php:7.4 -y
-
+ sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+ 
  OS_RELATED=" php-pear php74-php-pecl-mcrypt php74-php-pecl-redis "
   
  sudo setenforce Permissive
