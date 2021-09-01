@@ -42,7 +42,7 @@ elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
   #yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y 
-  ## ARM instances has issues with remi repo
+  ## ARM instances has issues with remi repo - remi doesn't support ARM
   yum install config-manager -y
   #yum config-manager --set-enabled remi
   sudo yum module list php
@@ -63,7 +63,7 @@ then
  sudo dnf module enable php:7.4 -y
  sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
  
- OS_RELATED=" php-pear php74-php-pecl-mcrypt php74-php-pecl-redis "
+ OS_RELATED=" php74-php-pecl-mcrypt php74-php-pecl-redis "
   
  sudo setenforce Permissive
  
@@ -83,10 +83,12 @@ sudo yum install libsodium libsodium-devel -y
 sudo yum install libzip-devel -y
 sudo yum install libzstd-devel -y
 yes | sudo pecl install libsodium 
-yes | sudo pecl install igbinary 
-echo "extension=igbinary.so" | sudo tee /etc/php.d/10-igbin.ini
-echo "extension=redis.so" | sudo tee /etc/php.d/50-redis.ini
-echo "extension=sodium.so" | sudo tee /etc/php.d/20-sodium.ini
+yes | sudo pecl install igbinary
+
+  echo "extension=igbinary.so" | sudo tee /etc/php.d/10-igbin.ini
+  echo "extension=redis.so" | sudo tee /etc/php.d/50-redis.ini
+  echo "extension=sodium.so" | sudo tee /etc/php.d/20-sodium.ini
+  
 yes | sudo pecl install redis 
 
 ## downgrade php 
