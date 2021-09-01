@@ -14,6 +14,7 @@ DB_PASSWORD=asdfDFhdjtDFGeq4rwrc3IOcvxb4xbfsdf
 
 sudo docker run --name magento -p 3306:3306  -e MYSQL_ROOT_PASSWORD=$DB_PASSWORD --restart unless-stopped -d mariadb:10.4 
 
+echo "Mysql Password: $DB_PASSWORD" >> install-log.txt
 # mysql-cli
 
 
