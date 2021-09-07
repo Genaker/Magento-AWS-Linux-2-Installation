@@ -49,6 +49,8 @@ composer install # use instal if you are having Lock file or Update if without
 
 # UPDATE core_config_data   set value = REPLACE(value, 'https:', 'http:') WHERE value LIKE 'https://%.com/%';
 
+# UPDATE core_config_data set value = "0" where path like "%web/secure/enable_upgrade_insecure%";
+
 
 
 
