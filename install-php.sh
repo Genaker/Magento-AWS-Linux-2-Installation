@@ -8,6 +8,8 @@ PHP_VERSION="7.4"
 
 LINUX_VERSION=$(cat /etc/system-release)
 
+sudo yum install make -y
+
 echo $LINUX_VERSION
 
 sudo yum remove php* -y
