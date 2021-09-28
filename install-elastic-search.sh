@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yum -y install java
+yum -y install java htop
 
 ELKREPO=${ELKREPO:="7.x"}
 
