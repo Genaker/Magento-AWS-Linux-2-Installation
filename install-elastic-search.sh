@@ -4,6 +4,9 @@ yum -y install java
 
 ELKREPO=${ELKREPO:="7.x"}
 
+# By default Elasticsearch is only accessible on localhost. Set a different
+# address here to expose this node on the network:
+HOST_IP="0.0.0.0"
 #install Elastic Search
 
 rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
@@ -24,7 +27,7 @@ echo "discovery.type: single-node" >> /etc/elasticsearch/elasticsearch.yml
 #echo "xpack.security.enabled: true" >> /etc/elasticsearch/elasticsearch.yml
 sed -i "s/.*cluster.name.*/cluster.name: magento/" /etc/elasticsearch/elasticsearch.yml
 sed -i "s/.*node.name.*/node.name: magento-node1/" /etc/elasticsearch/elasticsearch.yml
-sed -i "s/.*network.host.*/network.host: 127.0.0.1/" /etc/elasticsearch/elasticsearch.yml
+sed -i "s/.*network.host.*/network.host: ${HOST_IP}/" /etc/elasticsearch/elasticsearch.yml
 sed -i "s/.*http.port.*/http.port: 9200/" /etc/elasticsearch/elasticsearch.yml
 sed -i "s/.*-Xms.*/-Xms888m/" /etc/elasticsearch/jvm.options
 sed -i "s/.*-Xmx.*/-Xmx888m/" /etc/elasticsearch/jvm.options
