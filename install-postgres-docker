@@ -1,0 +1,7 @@
+#!\bin\bash\
+
+docker run --name postgres --restart always -p 5432:5432 -e POSTGRES_PASSWORD=test -d postgres  
+
+docker ps
+
+sudo yum install  postgresql
