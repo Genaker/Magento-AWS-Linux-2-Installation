@@ -25,3 +25,5 @@ sudo growpart /dev/xvda 1
 
 # Expand the size of the file system.
 sudo resize2fs
+
+sudo xfs_growfs / 
