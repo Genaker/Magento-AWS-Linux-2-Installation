@@ -161,6 +161,39 @@ server {
 ```
 Save the file and exit.
 
+## Set Magento file permissions
+You must set read-write permissions for the web server group before you install the Magento software. This is necessary so that the command line can write files to the Magento file system.
+
+```
+cd /var/www/html/<magento install directory>
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+chown -R :www-data . # Ubuntu
+chmod u+x bin/magento
+```
+
+# Install Magento
+You must use the command line to install Magento.
+
+This example assumes that the Magento install directory is named magento2ee, the db-host is on the same machine (localhost), and that the db-name, db-user, and db-password are all magento:
+
+```
+bin/magento setup:install \
+--base-url=http://localhost/magento2ee \
+--db-host=localhost \
+--db-name=magento \
+--db-user=magento \
+--db-password=magento \
+--admin-firstname=admin \
+--admin-lastname=admin \
+--admin-email=admin@admin.com \
+--admin-user=admin \
+--admin-password=admin123 \
+--language=en_US \
+--currency=USD \
+--timezone=America/Chicago \
+--use-rewrites=1
+```
 
 # Logs
 
