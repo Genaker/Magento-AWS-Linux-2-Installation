@@ -3,7 +3,7 @@ services:
 
 # Update sinle container command : docker-compose up -d --no-deps db
   db:
-    image: mariadb:10.5.12
+    image: mariadb:10.6.4
     container_name: db
     network_mode: host
     restart: always
