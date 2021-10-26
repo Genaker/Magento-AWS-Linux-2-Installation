@@ -31,6 +31,11 @@ bash ./install-docker.sh
 
 echo "Install Doker Compose ElasticSearch/MariaDB/Redis containers"
 
-docker-compose up -d -f magento-docker-compose-hybrid.yml 
+docker-compose -f magento-docker-compose-hybrid.yml up -d
 
 docker ps
+
+curl 127.0.0.1:9200
+
+docker exec -it redis redis-cli -r 1 info server
+mysql -h 127.0.0.1 -u root -p'sdsd' -c'version()'
