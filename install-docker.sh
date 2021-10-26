@@ -4,7 +4,6 @@ set +e
 curl -fsSL https://get.docker.com -o get-docker.sh 
 sudo sh get-docker.sh || (sudo amazon-linux-extras install docker && sudo yum install docker -y && sudo usermod -a -G docker ec2-user) 
 
-
 LINUX_VERSION=$(cat /etc/system-release)
 echo $LINUX_VERSION
 
@@ -16,7 +15,6 @@ then
   sudo yum install docker-ce docker-ce-cli containerd.io
  
 fi
-
 
 sudo usermod -aG docker $USER
 
