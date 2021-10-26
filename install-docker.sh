@@ -26,11 +26,19 @@ yum install iptables-services -y
 sudo service docker start
 sudo systemctl enable docker.service
 
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+## Doesn't work on ARM linuxes
+# sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+#sudo chmod +x /usr/local/bin/docker-compose
+#sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
+# Install Compose using pip
+
+python3 -V
+sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+pip3 install docker-compose
+
 
 # Test Docker Compose
 docker-compose --version
