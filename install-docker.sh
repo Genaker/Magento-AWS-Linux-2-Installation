@@ -31,13 +31,12 @@ sudo systemctl enable docker.service
 #sudo chmod +x /usr/local/bin/docker-compose
 #sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
-# Install Compose using pip
+# Install Compose using Docker container
 
 python3 -V
 sudo curl -L --fail https://raw.githubusercontent.com/linuxserver/docker-docker-compose/master/run.sh -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-pip3 install docker-compose
 
 
 # Test Docker Compose
