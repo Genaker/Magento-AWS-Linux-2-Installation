@@ -16,8 +16,8 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.15.1
     network_mode: host
-    ports:
-      - 9200:9200
+    #ports:
+    #  - 9200:9200
     restart: always
     container_name: elasticsearch
     environment:
