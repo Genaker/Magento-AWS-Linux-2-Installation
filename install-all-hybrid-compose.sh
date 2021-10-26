@@ -26,6 +26,9 @@ set +e
 bash ./configure-nginx.sh
 set -e
 
+echo "Install Docker and Docker-Compose"
+bash ./install-docker.sh
+
 echo "Install Doker Compose ElasticSearch/MariaDB/Redis containers"
 
 docker-compose up -d -f magento-docker-compose-hybrid.yml 
