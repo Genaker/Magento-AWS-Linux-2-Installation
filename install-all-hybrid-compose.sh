@@ -53,4 +53,10 @@ cd /var/www/html/magento/
 php -d memory_limit=5028M /usr/local/bin/composer create-project --ignore-platform-reqs --repository-url=https://repo.magento.com/ magento/project-community-edition=$MAGENTO_VERSION . 
 sudo chmod 777 /var/www/html/magento/
 
-sudo bash ./install-magento.sh
+# -E, --preserve-env
+#             Indicates to the security policy that the user wishes to preserve
+#             their existing environment variables.  The security policy may
+#             return an error if the user does not have permission to preserve
+#             the environment.
+
+sudo -E bash ./install-magento.sh
