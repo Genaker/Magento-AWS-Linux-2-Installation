@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 
+echo "DB Password:$DB_PASSWORD"
+
 MAGE_DOMAIN=$(curl ipinfo.io/ip)
 DB_NAME=magento2
 DB_USER=root
