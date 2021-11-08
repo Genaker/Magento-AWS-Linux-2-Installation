@@ -1,3 +1,3 @@
 #!bin/bash
 
-yum install wget sudo -y
+yum install wget zip sudo -y
