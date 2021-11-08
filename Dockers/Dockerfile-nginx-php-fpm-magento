@@ -19,6 +19,7 @@ yum install epel-release -y;\
 yum install supervisor -y; \
 
 echo "Install PHP \n"; \
+pwd; \
 bash ./install-php.sh; \
 bash ./configure-php.sh; \
 # bash ./install-tideways-profiler.sh
