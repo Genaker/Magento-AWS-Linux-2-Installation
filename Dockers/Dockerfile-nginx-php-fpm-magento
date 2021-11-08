@@ -1,6 +1,8 @@
 FROM centos:8 as magento
 
 COPY ../install-prepare.sh /scripts/
+ADD conf/supervisord.conf /etc/supervisord.conf
+
 RUN ls && chmod +x /scripts/install-prepare.sh && \
 bash /scripts/install-prepare.sh; \
 cd ~ && \
@@ -20,8 +22,6 @@ bash ./install-prepare.sh; \
 
 echo "Install SupervisorDd";\
 yum install supervisor -y; \
-
-ADD conf/supervisord.conf /etc/supervisord.conf
 
 echo "Install PHP \n"; \
 bash ./install-php.sh; \
