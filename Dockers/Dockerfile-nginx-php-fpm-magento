@@ -36,8 +36,7 @@ bash ./install-nginx.sh; \
 echo "Configure Nginx \n"; \
 set +e; \
 bash ./configure-nginx.sh; \
-set -e; 
-
+set -e; \
 
 echo "Install Magento Git \n"; \
 mkdir -p /var/www/html/magento/; \
