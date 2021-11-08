@@ -15,7 +15,7 @@ ls; \
 echo "Installing Utilities \n"; \
 bash ./install-prepare.sh; \ 
 echo "Install SupervisorDd";\
-yum install epel-release;\
+yum install epel-release -y;\
 yum install supervisor -y; \
 
 echo "Install PHP \n"; \
