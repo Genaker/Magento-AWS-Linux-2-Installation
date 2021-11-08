@@ -18,8 +18,7 @@ cd ~; \
 cd ./Magento-AWS-Linux-2-Installation-master/; \
 ls; \
 echo "Installing Utilities \n"; \
-bash ./install-prepare.sh; \
-
+bash ./install-prepare.sh; \ 
 echo "Install SupervisorDd";\
 yum install supervisor -y; \
 
