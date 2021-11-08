@@ -4,9 +4,9 @@ COPY ./preinstall.sh /scripts/
 ADD conf/supervisord.conf /etc/supervisord.conf
 
 RUN ls && bash /scripts/preinstall.sh; \
-cd ~ && \
+cd ~; \
 wget https://github.com/Genaker/Magento-AWS-Linux-2-Installation/archive/refs/heads/master.zip; \
-unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/; \
+unzip master.zip && cd ./Magento-AWS-Linux-2-Installation-master/; 
 
 RUN set -x; \
 cd ~; \
