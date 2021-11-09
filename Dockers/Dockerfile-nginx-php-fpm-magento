@@ -16,7 +16,8 @@ echo "Installing Utilities \n"; \
 bash ./install-prepare.sh; \ 
 echo "Install SupervisorDd";\
 yum install epel-release -y;\
-yum install supervisor -y; 
+yum install supervisor -y;\
+mkdir -p /var/log/supervisor;
 
 RUN echo "Install PHP \n"; \
 pwd; \
@@ -24,6 +25,8 @@ cd ~; \
 ls; \
 cd ./Magento-AWS-Linux-2-Installation-master/; \
 bash ./install-php.sh; \
+#Some bug 
+yum install php-fpm -y; \
 bash ./configure-php.sh; \
 # bash ./install-tideways-profiler.sh
 set +e; \
