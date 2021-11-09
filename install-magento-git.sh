@@ -6,7 +6,7 @@ mkdir -p /var/www/html/magento/
 
 cd /var/www/html/magento/
 
-git clone https://github.com/magento/magento2.git .
+git clone -–depth 1 https://github.com/magento/magento2.git .
 
 composer install
 
