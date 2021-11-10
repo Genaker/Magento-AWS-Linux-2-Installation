@@ -4,7 +4,7 @@ set -x
 
 # Supports AWS Linux and Centos 8
 
-PHP_VERSION="7.4"
+PHP_VERSION="${PHP_VERSION:-7.4}"
 
 LINUX_VERSION=$(cat /etc/system-release)
 
@@ -49,7 +49,7 @@ then
   #yum config-manager --set-enabled remi
   sudo yum module list php
   yum module reset php -y
-  sudo yum module enable php:$PHP_VERSION
+  yes | sudo yum module enable php:$PHP_VERSION
   #yum module reset php -y
   #yum -y module enable php:remi-$PHP_VERSION
   sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -62,7 +62,7 @@ then
   
  yum module reset php -y
 
- sudo dnf module enable php:7.4 -y
+ yes | sudo dnf module enable php:7.4 -y
  sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
  
  OS_RELATED=" php74-php-pecl-mcrypt php74-php-pecl-redis "
