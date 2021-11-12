@@ -23,7 +23,7 @@ cat > /etc/yum.repos.d/mariadb.repo << EOF
 name = MariaDB Server
 baseurl = https://dlm.mariadb.com/repo/mariadb-server/10.4/yum/rhel/8/x86_64
 gpgkey = file:///etc/pki/rpm-gpg/MariaDB-Server-GPG-KEY
-gpgcheck = 1
+gpgcheck = 0
 enabled = 1
 module_hotfixes = 1
 
@@ -33,14 +33,14 @@ module_hotfixes = 1
 name = MariaDB MaxScale
 baseurl = https://dlm.mariadb.com/repo/maxscale/latest/yum/rhel/8/x86_64
 gpgkey = file:///etc/pki/rpm-gpg/MariaDB-MaxScale-GPG-KEY
-gpgcheck = 1
+gpgcheck = 0
 enabled = 1
 
 [mariadb-tools]
 name = MariaDB Tools
 baseurl = https://downloads.mariadb.com/Tools/rhel/8/x86_64
 gpgkey = file:///etc/pki/rpm-gpg/MariaDB-Enterprise-GPG-KEY
-gpgcheck = 1
+gpgcheck = 0
 enabled = 1
 EOF
 
