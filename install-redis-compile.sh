@@ -86,6 +86,7 @@ sudo systemctl start redis
 sudo service redis status --no-pager
 
 rm -rf ./$REDIS_VERSION
+rm -rf ./redis-stable/
 set -e
 
 
