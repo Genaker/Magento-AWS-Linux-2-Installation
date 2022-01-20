@@ -6,6 +6,8 @@ set -x
 
 PHP_VERSION="${PHP_VERSION:-7.4}"
 
+echo $PHP_VERSION
+
 LINUX_VERSION=$(cat /etc/system-release)
 
 sudo yum install make -y
