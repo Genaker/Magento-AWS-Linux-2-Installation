@@ -16,13 +16,14 @@ echo $LINUX_VERSION
 
 sudo yum remove php* -y
 
+
 if echo $LINUX_VERSION | grep -q "Amazon Linux release 2"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
   sudo amazon-linux-extras enable php${PHP_VERSION}
   sudo yum clean metadata
   # to downgarede use disable command
-  #sudo amazon-linux-extras disable php7.4 
+  #sudo amazon-linux-extras disable php${PHP_VERSION}
   # sudo yum remove php* -y
   # sudo yum autoremove php php-common
   sudo yes | sudo amazon-linux-extras install php${PHP_VERSION} 
@@ -46,12 +47,15 @@ elif echo $LINUX_VERSION | grep -q "CentOS Linux release 8"
 then
   # TO DO MOVE REPOS to THE initial SCRITt 
   #yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y 
+  sudo dnf install dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
   ## ARM instances has issues with remi repo - remi doesn't support ARM
   yum install config-manager -y
   #yum config-manager --set-enabled remi
   sudo yum module list php
   yum module reset php -y
+  sudo dnf module list reset php -y
   yes | sudo yum module enable php:$PHP_VERSION
+  yes | sudo dnf module enable php:remi-$PHP_VERSION
   #yum module reset php -y
   #yum -y module enable php:remi-$PHP_VERSION
   sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -64,7 +68,7 @@ then
   
  yum module reset php -y
 
- yes | sudo dnf module enable php:7.4 -y
+ yes | sudo dnf module enable php:${PHP_VERSION} -y
  sudo yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
  
  OS_RELATED=" php74-php-pecl-mcrypt php74-php-pecl-redis "
@@ -76,24 +80,22 @@ else
   exit 1
 fi
 
-
-sudo yum -y install php php-common php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel 
-
-sudo yum install php-pear -y
+sudo yum -y install php php-common php-pear php-mysqlnd php-opcache php-xml php-gd php-soap php-bcmath php-intl php-mbstring php-json php-iconv php-fpm php-apcu php-zip php-devel 
 
 sudo yum -y install $OS_RELATED
 
 sudo yum install libsodium libsodium-devel -y
 sudo yum install libzip-devel -y
 sudo yum install libzstd-devel -y
+
 yes | sudo pecl install libsodium 
 yes | sudo pecl install igbinary
+yes | sudo pecl install redis 
 
   echo "extension=igbinary.so" | sudo tee /etc/php.d/10-igbin.ini
   echo "extension=redis.so" | sudo tee /etc/php.d/50-redis.ini
   echo "extension=sodium.so" | sudo tee /etc/php.d/20-sodium.ini
-  
-yes | sudo pecl install redis 
+ 
 
 ## downgrade php 
 #
