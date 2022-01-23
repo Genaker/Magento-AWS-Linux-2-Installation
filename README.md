@@ -22,6 +22,12 @@ Point DNS to IP or Load Blancer and:
 ```
 mysql -h 127.0.0.0 -u {user} -p{password} magento -e'UPDATE core_config_data set value = "http://{{magento.url}}/" where path like "web/%/base_url"'
 bin/magento c:c
+
+# or 
+bin/magento config:set web/unsecure/base_url "http(s)://18.222.***.***/"
+bin/magento config:set web/secure/use_in_frontend  1(0)
+bin/magento config:set web/secure/use_in_adminhtml  1(0)
+
 ```
 
 If you have any questions or issues feel free to send me an email – yegorshytikov@gmail.com
