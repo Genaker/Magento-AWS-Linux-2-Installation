@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAGENTO_VERSION="2.3.4"
+MAGENTO_VERSION="2.4.2"
 
 export COMPOSER_MEMORY_LIMIT=-1
 
